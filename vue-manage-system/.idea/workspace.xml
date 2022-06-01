@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ad705274-f5a1-4b9c-8732-5966b95b7ad0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/ThemePicker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/table.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/table.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tags.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tags.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plugins/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/element.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/i18n.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/403.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/403.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/404.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/BaseCharts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BaseCharts.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/BaseForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BaseForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/BaseTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/BaseTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Donate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Donate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Editor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Editor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/I18n.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/I18n.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Icon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Icon.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Permission.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Permission.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Tabs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Upload.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Upload.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/User.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven\repository" />
+        <option name="mavenHome" value="D:/maven/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.8.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="29uNcF7HIek4KAbX2TYuL6SD2VX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\baobao\九班\学习\综合课设\check\vue-manage-system\src\components" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ad705274-f5a1-4b9c-8732-5966b95b7ad0" name="Default Changelist" comment="" />
+      <created>1653959087876</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653959087876</updated>
+      <workItem from="1653959089535" duration="6317000" />
+      <workItem from="1653984669329" duration="4049000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="933" y="170" key="FileChooserDialogImpl" timestamp="1653961677927">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="933" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1653961677927" />
+  </component>
+</project>
