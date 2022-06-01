@@ -42,7 +42,7 @@ public class TaskApater extends ArrayAdapter<Isend> {
 //        taskresult.setText(Integer.toString(task.getResult()));
 //        Log.d("标题",task.getTitle());
 
-        Log.d("hhh",Integer.toString(task.getResult()));
+//        Log.d("hhh",Integer.toString(task.getResult()));
         if(Integer.toString(task.getResult()).equals("0")){
             taskresult.setTextColor(0xffff0000);
             taskresult.setText("未通过");

@@ -41,9 +41,9 @@ public class PictureAdapter extends ArrayAdapter<Picture> {
 //        photo.setImageURI(picture.getPhoto());//获取到的url在界面上显示成图片,没写
 
         userid.setText(picture.getUserid());
-        Log.d("hhh",userid.getText().toString());
+//        Log.d("hhh",userid.getText().toString());
         picid.setText(Integer.toString(picture.getPicid()));
-        Log.d("hhh",Integer.toString(picture.getResult()));
+//        Log.d("hhh",Integer.toString(picture.getResult()));
         if(Integer.toString(picture.getResult()).equals("0")){
             taskresult.setTextColor(0xffff0000);
             taskresult.setText("未通过");

@@ -79,7 +79,7 @@ public class SubmitTaskActivity extends AppCompatActivity {
                 }
             }
         }
-        if (resultCode != RESULT_OK && data.getData()!=null) {
+        if ( data.getData()!=null&&resultCode != RESULT_OK) {
             return;
         } else {
             Uri imageuri = data.getData();

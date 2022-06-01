@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.ContactsContract;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -28,6 +29,7 @@ import com.example.check.R;
 import com.example.check.addtask.AddTaskJKMActivity;
 import com.example.check.addtask.AddTaskXCMActivity;
 import com.example.check.addtask.AddTaskZDYActivity;
+import com.example.check.menu.MainActivity;
 import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 
 import org.json.JSONArray;
@@ -97,7 +99,7 @@ public class cTaskFragment extends Fragment {
 //        }
 //    }
 
-    private ImageView but_cAddTask;
+    private ImageView but_cAddTask,but_return;
 
     private String baseURL = "http://10.0.2.2:9000/manage";
     private SharedPreferences sp;
@@ -112,10 +114,16 @@ public class cTaskFragment extends Fragment {
                              @Nullable   Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_c_task, container, false);
-
+        but_return=(ImageView)view.findViewById(R.id.but_return);
         Bundle bundle = getArguments();
         id = bundle.getInt("groupid");
-
+        but_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
         sp = getActivity().getSharedPreferences("onClick", MODE_PRIVATE);
         listView = (ListView)view.findViewById(R.id.taskclist) ;
         handler = new Handler();

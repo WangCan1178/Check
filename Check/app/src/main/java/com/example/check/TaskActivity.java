@@ -53,12 +53,13 @@ public class TaskActivity extends Activity {
     private List<Picture> pics;
     private PictureAdapter adapter;
     private Handler handler;
-//    private float p1=0f;
-//    private float p2=0f;
-//    private float p3=0f;
-//private int pass=0;
-//    private int    unpuss=0;
-//    private int unfinish=0;
+    private float p1=0.0f;
+    private float p2=0.0f;
+    private float p3=0.0f;
+    private int pass=0;
+    private int all=0;
+    private int unpass=0;
+    private int unfinish=0;
 
     private PieChartView	id_pie_chart;
 
@@ -78,6 +79,10 @@ public class TaskActivity extends Activity {
         Toast.makeText(this,"任务ID:"+taskid,Toast.LENGTH_SHORT).show();
 
         listView = (ListView)findViewById(R.id.tasklist) ;
+        unfinish();
+        unpass();
+        pass();
+
         handler = new Handler();
         StringBuilder stringBuilder = new StringBuilder(baseURL+"/getPic");
         stringBuilder.append("?");
@@ -110,6 +115,7 @@ public class TaskActivity extends Activity {
                 }else {
                     try {
                         jsonArray = new JSONArray(result);
+
                         for(int i=0;i<jsonArray.length();i++){
                             Picture picture = new Picture();
 //                            picture.setPhoto(jsonArray.getJSONObject(i).getString("url"));
@@ -125,17 +131,6 @@ public class TaskActivity extends Activity {
                             public void run() {
                                 adapter = new PictureAdapter(TaskActivity.this,R.layout.picture_item,pics);
                                 listView.setAdapter(adapter);
-
-//                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                                    @Override
-//                                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                                            Intent intent = new Intent(TaskActivity.this, com.example.check.SubmitTaskActivity.class);
-//                                            Bundle bundle1 = new Bundle();
-//                                            bundle1.putInt("taskid", pics.get(i).getTaskid());
-//                                            intent.putExtras(bundle1);
-//                                            startActivity(intent);
-//                                    }
-//                                });
                             }
                         };
                         new Thread(){
@@ -143,68 +138,60 @@ public class TaskActivity extends Activity {
                                 handler.post(runnable);
                             }
                         }.start();
+                        all=jsonArray.length();
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
+//                System.out.println("里面："+all);
             }
+
         });
-//        unpuss=unpass();
-//        pass= pass();
-//        unfinish=unfinish();
-//        Toast.makeText(this,"pass："+pass,Toast.LENGTH_SHORT).show();
-//        Toast.makeText(this,"unpass："+unpuss,Toast.LENGTH_SHORT).show();
-//        Toast.makeText(this,"unfinish："+unfinish,Toast.LENGTH_SHORT).show();
+        while ((all==0)) {
+//            System.out.println("外面：all"+all);
+        }
+
         id_tv_1 = findViewById(R.id.id_tv_1);
         id_tv_2 = findViewById(R.id.id_tv_2);
         id_tv_3 = findViewById(R.id.id_tv_3);
-//        id_tv_4 = findViewById(R.id.id_tv_4);
         id_pie_chart = findViewById(R.id.id_pie_chart);
 
+        p1=(float)(pass/all);
+        p2=(float)(unpass/all);
+        p3 = (float)(unfinish/all);
         ColorRandom colorRandom = new ColorRandom(10);
         for (int i = 0; i < 3; i++) {
             int colors = (int) colorRandom.getColors().get(i);
             // 这个是算百分比的，我直接设定了固定的数字
             switch (i){
                 case 0:
-//                    p1=(float)(pass/(unfinish+unpuss+pass)f);
-//                    DecimalFormat var = new DecimalFormat("#.###");
-//                    Toast.makeText(this,"p1"+var.format(p1),Toast.LENGTH_SHORT).show();
-                    pieModelList.add(new PieModel(colors, 0.5f));
+                    pieModelList.add(new PieModel(colors, p1));
                     break;
                 case 1:
-//                    p2=(float)(unpuss/(unfinish+unpuss+pass));
-//                    DecimalFormat var2 = new DecimalFormat("#.###");
-//                    Toast.makeText(this,"p2 "+var2.format(p2),Toast.LENGTH_SHORT).show();
-                    pieModelList.add(new PieModel(colors, 0.3f));
+                    pieModelList.add(new PieModel(colors, p2));
                     break;
                 case 2:
-//                    p3 = (float)(unfinish/(unfinish+unpuss+pass));
-//                    DecimalFormat var3 = new DecimalFormat("#.###");
-//                    Toast.makeText(this," p3"+var3.format(p3),Toast.LENGTH_SHORT).show();
-                    pieModelList.add(new PieModel(colors, 0.2f));
+                    pieModelList.add(new PieModel(colors, p3));
                     break;
 
             }
         }
-
         id_pie_chart.setData(pieModelList);
         id_pie_chart.startAnima();
 
-
         id_tv_1.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                if (pieModelList.get(0).selected) {
-                    pieModelList.get(0).selected = false;
-                } else {
-                    pieModelList.get(1).selected = false;
-                    pieModelList.get(2).selected = false;
-                    pieModelList.get(0).selected = true;
-                }
-                id_pie_chart.setData(pieModelList);
-                id_pie_chart.invalidate();
+                    @Override public void onClick(View v) {
+                        if (pieModelList.get(0).selected) {
+                            pieModelList.get(0).selected = false;
+                        } else {
+                            pieModelList.get(1).selected = false;
+                            pieModelList.get(2).selected = false;
+                            pieModelList.get(0).selected = true;
+                        }
+                        id_pie_chart.setData(pieModelList);
+                        id_pie_chart.invalidate();
 //                pass = pass();
-pass();
+                        pass();
             }
         });
 
@@ -220,10 +207,7 @@ pass();
                 }
                 id_pie_chart.setData(pieModelList);
                 id_pie_chart.invalidate();
-                //onCreate(null);
-//                unpuss = unpass();
                 unpass();
-//                Toast.makeText(TaskActivity.this,"已经通过的任务",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -239,25 +223,9 @@ pass();
                 }
                 id_pie_chart.setData(pieModelList);
                 id_pie_chart.invalidate();
-//                unfinish = unfinish();
                 unfinish();
-//                onCreate(null);
-//                Toast.makeText(TaskActivity.this,"没有完成的任务",Toast.LENGTH_LONG).show();
             }
         });
-
-//        id_tv_4.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override public void onClick(View v) {
-//                if (pieModelList.get(3).selected) {
-//                    pieModelList.get(3).selected = false;
-//                } else {
-//                    pieModelList.get(3).selected = true;
-//                }
-//                id_pie_chart.setData(pieModelList);
-//                id_pie_chart.invalidate();
-//            }
-//        });
 
     }
 
@@ -293,6 +261,7 @@ pass();
                 }else {
                     try {
                         jsonArray = new JSONArray(result);
+                        unpass=jsonArray.length();
                         for(int i=0;i<jsonArray.length();i++){
                             Picture picture = new Picture();
 //                            picture.setPhoto(jsonArray.getJSONObject(i).getString("url"));
@@ -332,11 +301,9 @@ pass();
         });
 //        onCreate(null);
 //        Toast.makeText(TaskActivity.this,"没有通过的任务",Toast.LENGTH_LONG).show();
+//        Toast.makeText(TaskActivity.this,listView.getCount(),Toast.LENGTH_LONG).show();
 //        return listView.getCount();
     }
-
-
-
     protected void unfinish(){
         StringBuilder stringBuilder = new StringBuilder(baseURL+"/getPicUnFinish");
         stringBuilder.append("?");
@@ -369,6 +336,7 @@ pass();
                 }else {
                     try {
                         jsonArray = new JSONArray(result);
+                        unfinish=jsonArray.length();
                         for(int i=0;i<jsonArray.length();i++){
                             Picture picture = new Picture();
 //                            picture.setPhoto(jsonArray.getJSONObject(i).getString("url"));
@@ -383,6 +351,8 @@ pass();
                             public void run() {
                                 adapter = new PictureAdapter(TaskActivity.this,R.layout.picture_item,pics);
                                 listView.setAdapter(adapter);
+
+//                                Toast.makeText(TaskActivity.this,adapter.getCount(),Toast.LENGTH_SHORT).show();
 //                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //                                    @Override
 //                                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -408,6 +378,8 @@ pass();
         });
 //        onCreate(null);
 //        Toast.makeText(TaskActivity.this,"没有完成的任务",Toast.LENGTH_LONG).show();
+//        Toast.makeText(TaskActivity.this,listView.getCount(),Toast.LENGTH_LONG).show();
+//        Log.i("个数",listView.getCount());
 //        return listView.getCount();
     }
     protected void pass(){
@@ -442,6 +414,7 @@ pass();
                 }else {
                     try {
                         jsonArray = new JSONArray(result);
+                        pass=jsonArray.length();
                         for(int i=0;i<jsonArray.length();i++){
                             Picture picture = new Picture();
 //                            picture.setPhoto(jsonArray.getJSONObject(i).getString("url"));
@@ -456,16 +429,6 @@ pass();
                             public void run() {
                                 adapter = new PictureAdapter(TaskActivity.this,R.layout.picture_item,pics);
                                 listView.setAdapter(adapter);
-//                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                                    @Override
-//                                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                                            Intent intent = new Intent(TaskActivity.this, com.example.check.SubmitTaskActivity.class);
-//                                            Bundle bundle1 = new Bundle();
-//                                            bundle1.putInt("taskid", pics.get(i).getTaskid());
-//                                            intent.putExtras(bundle1);
-//                                            startActivity(intent);
-//                                    }
-//                                });
                             }
                         };
                         new Thread(){
@@ -481,61 +444,8 @@ pass();
         });
 //        onCreate(null);
 //        Toast.makeText(TaskActivity.this,"已经完成的任务",Toast.LENGTH_LONG).show();
+//        Toast.makeText(TaskActivity.this,listView.getCount(),Toast.LENGTH_LONG).show();
 //        return listView.getCount();
     }
-//   public void showPopupMenu(final View view) {
-//
-//        // View当前PopupMenu显示的相对View的位置
-//        PopupMenu popupMenu = new PopupMenu(TaskActivity.this,view);
-//        // menu布局
-//        popupMenu.getMenuInflater().inflate(R.menu.task_select, popupMenu.getMenu());
-//        // menu的item点击事件
-//        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-//                switch (item.getItemId()){
-//                    case R.id.unpass:  //未通过
-//                        onCreate(null);
-//                        Toast.makeText(TaskActivity.this,"没有通过的任务",Toast.LENGTH_LONG).show();
-////                        Toast.makeText(TaskActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
-////                        Intent intentJKM = new Intent(TaskActivity.this,com.example.check.TaskActivity.class);
-////                        startActivity(intentJKM);
-//                        return true;
-////                        break;
-//                    case R.id.pass:  //已通过
-//                        onCreate(null);
-////                        Toast.makeText(TaskActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
-//                        Toast.makeText(TaskActivity.this,"已经通过的任务",Toast.LENGTH_LONG).show();
-////                        Intent intentXCM = new Intent(TaskActivity.this);
-////                        startActivity(intentXCM);
-//                        return true;
-////                        break;
-//                    case R.id.unfinish:  // 未完成
-//                        onCreate(null);
-//                        Toast.makeText(TaskActivity.this,"没有完成的任务",Toast.LENGTH_LONG).show();
-////                        Toast.makeText(TaskActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
-////                        Intent intentDXX = new Intent(TaskActivity.this,com.example.check.TaskActivity.class);
-////                        startActivity(intentDXX);
-//                        return true;
-////                        break;
-//                    default:
-//                        onCreate(null);
-//                        return false;
-////                        break;
-//                }
-////                Toast.makeText(getActivity(), item.getTitle(), Toast.LENGTH_SHORT).show();
-////                return false;
-//            }
-//        });
-//        // PopupMenu关闭事件
-//        popupMenu.setOnDismissListener(new PopupMenu.OnDismissListener() {
-//            @Override
-//            public void onDismiss(PopupMenu menu) {
-//                Toast.makeText(TaskActivity.this, "关闭PopupMenu", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//        popupMenu.show();
-//
-//    }
+
 }

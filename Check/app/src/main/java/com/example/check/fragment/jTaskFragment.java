@@ -14,12 +14,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.check.Adapter.TaskApater;
 import com.example.check.Entity.Isend;
 import com.example.check.R;
+import com.example.check.menu.MainActivity;
 import com.example.check.menu.joinActivity;
 import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 
@@ -89,7 +91,7 @@ public class jTaskFragment extends Fragment {
 //            mParam2 = getArguments().getString(ARG_PARAM2);
 //        }
 //    }
-    private Button but_jTask;
+    private ImageView but_return,but_refresh;
 
     private String baseURL = "http://10.0.2.2:9000/add";
     private SharedPreferences sp;
@@ -97,18 +99,34 @@ public class jTaskFragment extends Fragment {
     private TaskApater adapter;
     private ListView listView;
     private Handler handler;
-
+private int id;
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_j_task, container, false);
 
+        but_refresh=(ImageView)view.findViewById(R.id.but_refresh);
+        but_return=(ImageView)view.findViewById(R.id.but_return);
 
         Bundle bundle = getArguments();
-        int id = bundle.getInt("groupid");
+        id = bundle.getInt("groupid");
         Toast.makeText(getActivity(),"group"+id,Toast.LENGTH_SHORT).show();
-
+        but_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        but_refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(getActivity(), joinActivity.class);
+                intent.putExtra("groupid",id);
+                startActivity(intent);
+            }
+        });
         sp = getActivity().getSharedPreferences("onClick", MODE_PRIVATE);
         listView = (ListView)view.findViewById(R.id.tasklist1) ;
         handler = new Handler();
@@ -152,6 +170,7 @@ public class jTaskFragment extends Fragment {
 //                            task.setIfend(jsonArray.getJSONObject(i).getInt("ifend"));
                             task.setResult(jsonArray.getJSONObject(i).getInt("result"));
                             task.setIfend(jsonArray.getJSONObject(i).getInt("ifend"));
+                            task.setGroupid(jsonArray.getJSONObject(i).getInt("groupid"));
 //                            if ((jsonArray.getJSONObject(i).getInt("ifenf"))==0){
 //                                Toast.makeText(getActivity(),"该任务已经结束了",Toast.LENGTH_SHORT).show();
 //                                Intent intent =new Intent(getActivity(), jTaskFragment.class);

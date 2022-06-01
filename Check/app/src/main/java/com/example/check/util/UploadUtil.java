@@ -43,16 +43,18 @@ public class UploadUtil {
     private static final int TIME_OUT = 10 * 1000;//超时时间
     private static final String CHARSET = "utf-8";//设置编码
     private static String result = "提交失败！我们出了错误，请重试！";
-
+    private static boolean finish = false;
 
     public static String uploadImage(File file, String RequestURL, int taskid, String userid,String type) {
 
         String BOUNDARY = UUID.randomUUID().toString();//边界标识 随机生成
         String PREFIX = "--", LINE_END = "\r\n";
         String CONTENT_TYPE = "multipart/form-data";//内容类型
+        result = "提交失败！我们出了错误，请重试！";
+        finish = false;
+
         try {
-            boolean finish = false;
-            while(!finish){
+
             //创建RequestBody封装参数
             RequestBody fileBody = RequestBody.create(MediaType.parse("application/octet-stream"), file);// MediaType.parse("image/jpeg")//application/octet-stream
             //创建MultipartBody,给RequestBody进行设置
@@ -67,31 +69,36 @@ public class UploadUtil {
                     .url(RequestURL)
                     .post(multipartBody)
                     .build();
-
             //创建okhttp对象
             OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                    .connectTimeout(15, TimeUnit.SECONDS)
-                    .readTimeout(20, TimeUnit.SECONDS)
-                    .writeTimeout(20, TimeUnit.SECONDS)
+                    .connectTimeout(10, TimeUnit.SECONDS)
+                    .readTimeout(10, TimeUnit.SECONDS)
+                    .writeTimeout(10, TimeUnit.SECONDS)
                     .build();
+
             //上传完图片,得到服务器反馈数据
             okHttpClient.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
+                    result = "提交失败！我们出了错误，请重试！";
                     Log.e("ff", "uploadMultiFile() e=" + e);
+                    finish = true;
                 }
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
                     result = response.body().string();
-                    Log.i("ff", "uploadMultiFile() response=" + result);
+//                    Log.i("ff", "uploadMultiFile() response=" + result);
+                    finish = true;
+//                    Log.d("finish", String.valueOf(finish));
                 }
             });
-            finish =true;
+            while(!finish){
+                Thread.currentThread().sleep(1000);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Log.d("imthe per",result);
+        Log.d("the result of pic",result);
         return result;
     }
 

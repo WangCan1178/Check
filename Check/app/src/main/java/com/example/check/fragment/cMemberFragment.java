@@ -1,5 +1,7 @@
 package com.example.check.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -32,8 +36,10 @@ import java.util.ArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 ///**
@@ -93,7 +99,7 @@ public class cMemberFragment extends Fragment {
     private Handler handler;
     private ArrayList<Member> members;
     private MemberAdapter adapter;
-
+    private Button but_add_role;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -103,8 +109,9 @@ public class cMemberFragment extends Fragment {
 
         listView = (ListView)view.findViewById(R.id.memberList);
         handler = new Handler();
+        but_add_role = (Button)view.findViewById(R.id.but_add_role);
 
-        Bundle bundle = getArguments();
+        final Bundle bundle = getArguments();
         final int id = bundle.getInt("groupid");
 
         StringBuilder stringBuilder = new StringBuilder(baseURL+"/getMember");
@@ -162,6 +169,86 @@ public class cMemberFragment extends Fragment {
                         e.printStackTrace();
                     }
                 }
+            }
+        });
+        but_add_role.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setIcon(R.drawable.account);
+                builder.setTitle("请输入要添加的管理员");
+                //    通过LayoutInflater来加载一个xml的布局文件作为一个View对象
+                View view1 = LayoutInflater.from(getActivity()).inflate(R.layout.revise_group_name, null);
+                //    设置我们自己定义的布局文件作为弹出框的Content
+                builder.setView(view1);
+
+                final EditText groupname = (EditText)view1.findViewById(R.id.group_name);
+
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        final String a = groupname.getText().toString().trim();
+                        //    将输入的用户名和密码打印出来
+                        //Toast.makeText(getActivity(), "用户昵称: " + a , Toast.LENGTH_SHORT).show();
+                        if (a.equals("")){
+                            DynamicToast toast = new DynamicToast();
+                            Toast toast1 = toast.makeError(getActivity(),"昵称不能为空");
+                            toast1.setGravity(Gravity.TOP,0,50);
+                            toast1.show();
+                        }else{
+                            OkHttpClient okHttpClient = new OkHttpClient();
+                            JSONObject jsonObject = new JSONObject();
+                            try {
+                                jsonObject.put("userid",a);
+                                jsonObject.put("groupid",id);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=UTF-8"),String.valueOf(jsonObject));
+                            final Request request = new Request.Builder()
+                                    .url(baseURL+"/addManager")
+                                    .post(requestBody)
+                                    .build();
+                            Call call = okHttpClient.newCall(request);
+                            call.enqueue(new Callback() {
+                                @Override
+                                public void onFailure(Call call, IOException e) {
+
+                                }
+
+                                @Override
+                                public void onResponse(Call call, Response response) throws IOException {
+                                    final String result = response.body().string();
+                                    if (result.equals("success")){
+                                        getActivity().runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                DynamicToast toast = new DynamicToast();
+                                                Toast toast1 = toast.makeSuccess(getActivity(),"修改成功");
+                                                toast1.setGravity(Gravity.TOP,0,50);
+                                                toast1.show();
+                                                //刷新页面
+                                                onCreate(bundle);
+                                            }
+                                        });
+                                    }
+
+                                }
+                            });
+                        }
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+
+                    }
+                });
+                builder.show();
             }
         });
         return view;
