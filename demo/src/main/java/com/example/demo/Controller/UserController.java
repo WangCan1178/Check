@@ -81,7 +81,7 @@ public class UserController {
     @ResponseBody
     @PostMapping("/alterpsw")
     public String alterpsw(@RequestBody User user){
-        System.out.println(user.getUserid()+user.getPassword());
+//        System.out.println(user.getUserid()+user.getPassword());
         int result = userService.alterPsw(user.getUserid(),user.getPassword());
         if (result>0){
             return "success";

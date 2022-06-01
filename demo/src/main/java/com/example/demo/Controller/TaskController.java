@@ -52,7 +52,6 @@ public class TaskController {
     @GetMapping("/getTask2")
     public List<Task> getTask2(@RequestParam("id") int id){
         List<Task> result2 = taskService.getTask2(id);
-        System.out.println(result2);
         return result2;
     }
 
@@ -74,7 +73,6 @@ public class TaskController {
 //        System.out.println(task.getEndtime().toString());
 //        int result = taskService.insertTaskJKM(task);
         int result = taskService.insertTaskJKM(task.getTitle(),task.getGroupid(),task.getDescription(),task.getPublishtime(),task.getEndtime());
-        System.out.println(result);
         if (result>0){
             return "success";
         }
@@ -119,7 +117,6 @@ public class TaskController {
     @GetMapping("/altername")
     public String altername(@RequestParam("id") int id){
         String result =  taskService.getTaskTitle(id);
-        System.out.println(result);
         return result;
     }
 
@@ -127,7 +124,6 @@ public class TaskController {
     @GetMapping("/alterdescription")
     public String alterdescription(@RequestParam("id") int id){
         String result =  taskService.getDescription(id);
-        System.out.println(result);
         return result;
     }
 

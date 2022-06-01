@@ -51,7 +51,8 @@ public class UploadUtil {
         String PREFIX = "--", LINE_END = "\r\n";
         String CONTENT_TYPE = "multipart/form-data";//内容类型
         try {
-
+            boolean finish = false;
+            while(!finish){
             //创建RequestBody封装参数
             RequestBody fileBody = RequestBody.create(MediaType.parse("application/octet-stream"), file);// MediaType.parse("image/jpeg")//application/octet-stream
             //创建MultipartBody,给RequestBody进行设置
@@ -85,6 +86,8 @@ public class UploadUtil {
                     Log.i("ff", "uploadMultiFile() response=" + result);
                 }
             });
+            finish =true;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

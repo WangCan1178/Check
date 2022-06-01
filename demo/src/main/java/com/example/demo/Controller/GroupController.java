@@ -82,7 +82,6 @@ public class GroupController {
     @GetMapping("/altername")
     public String getMemName(@RequestParam("id") int id,@RequestParam("userid") String userid){
         String result =  groupService.getMemName(id, userid);
-        System.out.println(result);
         return result;
     }
 

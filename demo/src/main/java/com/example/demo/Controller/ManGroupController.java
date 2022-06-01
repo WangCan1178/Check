@@ -90,7 +90,7 @@ public class ManGroupController {
     @GetMapping("/altername")
     public String altername(@RequestParam("id") int id,@RequestParam("userid") String userid){
         String result =  groupService.getMemName(id, userid);
-        System.out.println(result);
+//        System.out.println(result);
         return result;
     }
 

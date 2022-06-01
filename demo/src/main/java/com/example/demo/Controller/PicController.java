@@ -58,6 +58,7 @@ public class PicController {
     @ResponseBody
     @PostMapping("/add")
     public String add(@RequestParam("userid") String userid, @RequestParam("taskid") String taskid, @RequestParam("type") String type, @RequestParam("file") MultipartFile file) {
+//        System.out.println("YESYES!"+userid+taskid+type+file.toString());
         if (file.isEmpty()) {
             return "文件为空";
         }
@@ -93,36 +94,28 @@ public class PicController {
     @ResponseBody
     @GetMapping("/getPic")
     public List<Pic> getTask(@RequestParam("id") int id){
-        System.out.println(id);
         List<Pic> result = picService.getPics(id);
-        System.out.println(result);
         return result;
     }
 
     @ResponseBody
     @GetMapping("/getPicUnPass")
     public List<Pic> getPicUnPass(@RequestParam("id") int id){
-        System.out.println(id);
         List<Pic> result = picService.getPicUnPass(id);
-        System.out.println(result);
         return result;
     }
 
     @ResponseBody
     @GetMapping("/getPicUnFinish")
     public List<Pic> getPicUnFinish(@RequestParam("id") int id){
-        System.out.println(id);
         List<Pic> result = picService.getPicUnFinish(id);
-        System.out.println(result);
         return result;
     }
 
     @ResponseBody
     @GetMapping("/getPicPass")
     public List<Pic> getPicPass(@RequestParam("id") int id){
-        System.out.println(id);
         List<Pic> result = picService.getPicPass(id);
-        System.out.println(result);
         return result;
     }
 
