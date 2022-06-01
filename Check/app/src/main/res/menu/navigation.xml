@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/joingroup"
+        android:title="@string/join"
+        android:orderInCategory="0"/>
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/creategroup"
+        android:title="@string/create"
+        android:orderInCategory="1"/>
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/my"
+        android:title="@string/my"
+        android:orderInCategory="2"/>
+
+</menu>
