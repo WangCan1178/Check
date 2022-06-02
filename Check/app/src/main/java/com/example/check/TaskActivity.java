@@ -48,6 +48,7 @@ import okhttp3.Response;
 public class TaskActivity extends Activity {
 
 //    private ImageView select;
+
     private ListView listView;
     private String baseURL = "http://10.0.2.2:9000/pic";
     private List<Picture> pics;
@@ -79,9 +80,9 @@ public class TaskActivity extends Activity {
         Toast.makeText(this,"任务ID:"+taskid,Toast.LENGTH_SHORT).show();
 
         listView = (ListView)findViewById(R.id.tasklist) ;
-        unfinish();
-        unpass();
-        pass();
+        unfinishCount();//计算没有完成的数量
+        unpassCount();//计算没有通过的数量
+        passCount();//计算已经通过的数量
 
         handler = new Handler();
         StringBuilder stringBuilder = new StringBuilder(baseURL+"/getPic");
@@ -118,9 +119,7 @@ public class TaskActivity extends Activity {
 
                         for(int i=0;i<jsonArray.length();i++){
                             Picture picture = new Picture();
-//                            picture.setPhoto(jsonArray.getJSONObject(i).getString("url"));
                             picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
-//                            Log.d("userid",jsonArray.getJSONObject(i).getInt("userid"));
                             picture.setPicid(jsonArray.getJSONObject(i).getInt("picid"));
                             picture.setResult(jsonArray.getJSONObject(i).getInt("result"));
                             pics.add(picture);
@@ -143,23 +142,34 @@ public class TaskActivity extends Activity {
                         e.printStackTrace();
                     }
                 }
-//                System.out.println("里面："+all);
+                System.out.println("里面："+all);
             }
 
         });
         while ((all==0)) {
-//            System.out.println("外面：all"+all);
+            try {
+                Thread.currentThread().sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-
+//        System.out.println("all:"+all);
+//        System.out.println("unfinish:"+unfinish);
+//        System.out.println("unpass:"+unpass);
+//        System.out.println("pass:"+pass);
         id_tv_1 = findViewById(R.id.id_tv_1);
         id_tv_2 = findViewById(R.id.id_tv_2);
         id_tv_3 = findViewById(R.id.id_tv_3);
         id_pie_chart = findViewById(R.id.id_pie_chart);
 
-        p1=(float)(pass/all);
-        p2=(float)(unpass/all);
-        p3 = (float)(unfinish/all);
-        ColorRandom colorRandom = new ColorRandom(10);
+        p1=(float)pass/(float)all;
+        p2=(float)unpass/(float)all;
+        p3 = (float)unfinish/(float)all;
+//      System.out.println("p1::"+(float)pass/(float)all);
+//      System.out.println("p2::"+unpass/all);
+//      System.out.println("p3::"+unfinish/all);
+//      System.out.println("p1:"+p1+"    p2:"+p2+"   p3:"+p3);
+        ColorRandom colorRandom = new ColorRandom(3);
         for (int i = 0; i < 3; i++) {
             int colors = (int) colorRandom.getColors().get(i);
             // 这个是算百分比的，我直接设定了固定的数字
@@ -173,25 +183,23 @@ public class TaskActivity extends Activity {
                 case 2:
                     pieModelList.add(new PieModel(colors, p3));
                     break;
-
             }
         }
         id_pie_chart.setData(pieModelList);
         id_pie_chart.startAnima();
 
         id_tv_1.setOnClickListener(new View.OnClickListener() {
-                    @Override public void onClick(View v) {
-                        if (pieModelList.get(0).selected) {
-                            pieModelList.get(0).selected = false;
-                        } else {
-                            pieModelList.get(1).selected = false;
-                            pieModelList.get(2).selected = false;
-                            pieModelList.get(0).selected = true;
-                        }
-                        id_pie_chart.setData(pieModelList);
-                        id_pie_chart.invalidate();
-//                pass = pass();
-                        pass();
+            @Override public void onClick(View v) {
+                if (pieModelList.get(0).selected) {
+                    pieModelList.get(0).selected = false;
+                } else {
+                    pieModelList.get(1).selected = false;
+                    pieModelList.get(2).selected = false;
+                    pieModelList.get(0).selected = true;
+                }
+                id_pie_chart.setData(pieModelList);
+                id_pie_chart.invalidate();
+                pass();
             }
         });
 
@@ -226,7 +234,6 @@ public class TaskActivity extends Activity {
                 unfinish();
             }
         });
-
     }
 
     protected void unpass(){
@@ -264,9 +271,7 @@ public class TaskActivity extends Activity {
                         unpass=jsonArray.length();
                         for(int i=0;i<jsonArray.length();i++){
                             Picture picture = new Picture();
-//                            picture.setPhoto(jsonArray.getJSONObject(i).getString("url"));
                             picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
-//                            Log.d("userid",jsonArray.getJSONObject(i).getInt("userid"));
                             picture.setPicid(jsonArray.getJSONObject(i).getInt("picid"));
                             picture.setResult(jsonArray.getJSONObject(i).getInt("result"));
                             pics.add(picture);
@@ -276,16 +281,6 @@ public class TaskActivity extends Activity {
                             public void run() {
                                 adapter = new PictureAdapter(TaskActivity.this,R.layout.picture_item,pics);
                                 listView.setAdapter(adapter);
-//                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                                    @Override
-//                                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                                            Intent intent = new Intent(TaskActivity.this, com.example.check.SubmitTaskActivity.class);
-//                                            Bundle bundle1 = new Bundle();
-//                                            bundle1.putInt("taskid", pics.get(i).getTaskid());
-//                                            intent.putExtras(bundle1);
-//                                            startActivity(intent);
-//                                    }
-//                                });
                             }
                         };
                         new Thread(){
@@ -299,11 +294,8 @@ public class TaskActivity extends Activity {
                 }
             }
         });
-//        onCreate(null);
-//        Toast.makeText(TaskActivity.this,"没有通过的任务",Toast.LENGTH_LONG).show();
-//        Toast.makeText(TaskActivity.this,listView.getCount(),Toast.LENGTH_LONG).show();
-//        return listView.getCount();
     }
+
     protected void unfinish(){
         StringBuilder stringBuilder = new StringBuilder(baseURL+"/getPicUnFinish");
         stringBuilder.append("?");
@@ -339,9 +331,7 @@ public class TaskActivity extends Activity {
                         unfinish=jsonArray.length();
                         for(int i=0;i<jsonArray.length();i++){
                             Picture picture = new Picture();
-//                            picture.setPhoto(jsonArray.getJSONObject(i).getString("url"));
                             picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
-//                            Log.d("userid",jsonArray.getJSONObject(i).getInt("userid"));
                             picture.setPicid(jsonArray.getJSONObject(i).getInt("picid"));
                             picture.setResult(jsonArray.getJSONObject(i).getInt("result"));
                             pics.add(picture);
@@ -351,18 +341,6 @@ public class TaskActivity extends Activity {
                             public void run() {
                                 adapter = new PictureAdapter(TaskActivity.this,R.layout.picture_item,pics);
                                 listView.setAdapter(adapter);
-
-//                                Toast.makeText(TaskActivity.this,adapter.getCount(),Toast.LENGTH_SHORT).show();
-//                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                                    @Override
-//                                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                                            Intent intent = new Intent(TaskActivity.this, com.example.check.SubmitTaskActivity.class);
-//                                            Bundle bundle1 = new Bundle();
-//                                            bundle1.putInt("taskid", pics.get(i).getTaskid());
-//                                            intent.putExtras(bundle1);
-//                                            startActivity(intent);
-//                                    }
-//                                });
                             }
                         };
                         new Thread(){
@@ -376,12 +354,8 @@ public class TaskActivity extends Activity {
                 }
             }
         });
-//        onCreate(null);
-//        Toast.makeText(TaskActivity.this,"没有完成的任务",Toast.LENGTH_LONG).show();
-//        Toast.makeText(TaskActivity.this,listView.getCount(),Toast.LENGTH_LONG).show();
-//        Log.i("个数",listView.getCount());
-//        return listView.getCount();
     }
+
     protected void pass(){
         StringBuilder stringBuilder = new StringBuilder(baseURL+"/getPicPass");
         stringBuilder.append("?");
@@ -417,9 +391,7 @@ public class TaskActivity extends Activity {
                         pass=jsonArray.length();
                         for(int i=0;i<jsonArray.length();i++){
                             Picture picture = new Picture();
-//                            picture.setPhoto(jsonArray.getJSONObject(i).getString("url"));
                             picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
-//                            Log.d("userid",jsonArray.getJSONObject(i).getInt("userid"));
                             picture.setPicid(jsonArray.getJSONObject(i).getInt("picid"));
                             picture.setResult(jsonArray.getJSONObject(i).getInt("result"));
                             pics.add(picture);
@@ -442,10 +414,125 @@ public class TaskActivity extends Activity {
                 }
             }
         });
-//        onCreate(null);
-//        Toast.makeText(TaskActivity.this,"已经完成的任务",Toast.LENGTH_LONG).show();
-//        Toast.makeText(TaskActivity.this,listView.getCount(),Toast.LENGTH_LONG).show();
-//        return listView.getCount();
     }
 
+    protected void unfinishCount(){
+        StringBuilder stringBuilder = new StringBuilder(baseURL+"/getPicUnFinish");
+        stringBuilder.append("?");
+        stringBuilder.append("id").append("=").append(taskid);
+        OkHttpClient client = new OkHttpClient();
+        final Request request = new Request.Builder()
+                .url(stringBuilder.toString())
+                .get()
+                .build();
+        Call call = client.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String result = response.body().string();
+                JSONArray jsonArray = null;
+                if (result.equals("")){
+                    Looper.prepare();
+                    DynamicToast toast = new DynamicToast();
+                    Toast toast1 = toast.makeError(TaskActivity.this,"出错啦");
+                    toast1.setGravity(Gravity.TOP,0,50);
+                    toast1.show();
+                    Looper.loop();
+                    return;
+                }else {
+                    try {
+                        jsonArray = new JSONArray(result);
+                        unfinish=jsonArray.length();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
+
+    protected void unpassCount(){
+        StringBuilder stringBuilder = new StringBuilder(baseURL+"/getPicUnPass");
+        stringBuilder.append("?");
+        stringBuilder.append("id").append("=").append(taskid);
+        OkHttpClient client = new OkHttpClient();
+        final Request request = new Request.Builder()
+                .url(stringBuilder.toString())
+                .get()
+                .build();
+        Call call = client.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String result = response.body().string();
+                JSONArray jsonArray = null;
+                if (result.equals("")){
+                    Looper.prepare();
+                    DynamicToast toast = new DynamicToast();
+                    Toast toast1 = toast.makeError(TaskActivity.this,"出错啦");
+                    toast1.setGravity(Gravity.TOP,0,50);
+                    toast1.show();
+                    Looper.loop();
+                    return;
+                }else {
+                    try {
+                        jsonArray = new JSONArray(result);
+                        unpass=jsonArray.length();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
+
+    protected void passCount(){
+        StringBuilder stringBuilder = new StringBuilder(baseURL+"/getPicPass");
+        stringBuilder.append("?");
+        stringBuilder.append("id").append("=").append(taskid);
+        OkHttpClient client = new OkHttpClient();
+        final Request request = new Request.Builder()
+                .url(stringBuilder.toString())
+                .get()
+                .build();
+        Call call = client.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String result = response.body().string();
+                JSONArray jsonArray = null;
+                if (result.equals("")){
+                    Looper.prepare();
+                    DynamicToast toast = new DynamicToast();
+                    Toast toast1 = toast.makeError(TaskActivity.this,"出错啦");
+                    toast1.setGravity(Gravity.TOP,0,50);
+                    toast1.show();
+                    Looper.loop();
+                    return;
+                }else {
+                    try {
+                        jsonArray = new JSONArray(result);
+                        pass=jsonArray.length();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import android.graphics.Color;
-
+import android.util.Log;
 
 
 public class ColorRandom {
@@ -21,10 +21,19 @@ public class ColorRandom {
     }
 
     private void setColor() {
-        for (int i = 0; i < count; i++) {
-            int color = getColor();
-            colorArrays.add(color);
-        }
+
+
+        colorArrays.add(0xff339900);
+        colorArrays.add(0xffff0000);
+        colorArrays.add(0xff0033ff);
+
+
+
+//        for (int i = 0; i < count; i++) {
+//            int color = getColor();
+//            Log.d("color!!",String.valueOf(color));
+//            colorArrays.add(color);
+//        }
     }
 
     private Integer getColor() {
