@@ -20,6 +20,9 @@ public interface GroupDao {
     @Insert("insert into member(userid,groupid,memname,role) values(#{memid},#{groupid},#{memname},#{role})")
     public int addGroup(String memid,int groupid,String memname,int role);
 
+    @Select("call userinsert(#{groupid}, #{userid})")
+    public void userinsert(int groupid, String userid);
+
     @Select("select `group`.groupid,`group`.`name` from `group`,member where member.userid=#{id} and member.groupid = `group`.groupid and role=0")
     public List<Group> getManGroup(String id);
 
@@ -50,4 +53,6 @@ public interface GroupDao {
     @Delete("delete from member where groupid = #{groupid} and userid=#{userid}")
     public int delMember(String userid,int groupid);
 
+    @Delete("call delpic(#{groupid}, #{userid})")
+    void delpic(String userid, int groupid);
 }

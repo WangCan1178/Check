@@ -21,55 +21,70 @@ public class GroupService {
         this.groupDao = groupDao;
     }
 
-    public List<Group> getAddGroup(String id){
+    public List<Group> getAddGroup(String id) {
         return groupDao.getAddGroup(id);
     }
 
-    public int delAddGroup(String userid,int groupid){
-        return groupDao.delAddGroup(userid,groupid);
+    public int delAddGroup(String userid, int groupid) {
+        int result = 1;
+        try {
+            result = groupDao.delAddGroup(userid, groupid);
+            groupDao.delpic(userid, groupid);
+        } catch (Exception e) {
+            result = 0;
+        }
+        return result;
     }
 
-    public int addGroup(String memid,int groupid,String memname,int role){
-        return groupDao.addGroup(memid,groupid,memname,role);
+    public int addGroup(String memid, int groupid, String memname, int role) {
+        int result = 0;
+        try {
+            result = groupDao.addGroup(memid, groupid, memname, role);
+            groupDao.userinsert(groupid, memid);
+        } catch (Exception e) {
+            e.printStackTrace();
+            result = 0;
+        }
+        return result;
     }
 
-    public List<Group> getManGroup(String id){
+    public List<Group> getManGroup(String id) {
         return groupDao.getManGroup(id);
     }
 
-    public int createGroup(String name){
+    public int createGroup(String name) {
         return groupDao.createGroup(name);
     }
 
-    public int getGroupId(String name){
+    public int getGroupId(String name) {
         return groupDao.getGroupId(name);
     }
 
-    public int addManager(String memid,int groupid,String memname){
-        return groupDao.addManager(memid,groupid,memname);
+    public int addManager(String memid, int groupid, String memname) {
+        return groupDao.addManager(memid, groupid, memname);
     }
 
-    public int delGroup(int groupid){
+    public int delGroup(int groupid) {
         return groupDao.delGroup(groupid);
     }
 
-    public String getGroupName(int id){
+    public String getGroupName(int id) {
         return groupDao.getGroupName(id);
     }
 
-    public String getMemName(int id,String userid){
-        return groupDao.getMemName(id,userid);
+    public String getMemName(int id, String userid) {
+        return groupDao.getMemName(id, userid);
     }
 
-    public int alterName(String name,String userid,int groupid){
+    public int alterName(String name, String userid, int groupid) {
         return groupDao.alterName(name, userid, groupid);
     }
 
-    public List<Member> getMember(int id){
+    public List<Member> getMember(int id) {
         return groupDao.getMember(id);
     }
 
-    public int delMember(String userid,int groupid){
-        return groupDao.delMember(userid,groupid);
+    public int delMember(String userid, int groupid) {
+        return groupDao.delMember(userid, groupid);
     }
 }
