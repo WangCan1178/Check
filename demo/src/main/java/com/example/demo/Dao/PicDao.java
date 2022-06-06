@@ -11,11 +11,8 @@ import java.util.List;
 @Mapper
 @Repository
 public interface PicDao {
-//    @Insert("insert into picture(url,result,taskid,userid) values(#{url},#{result},#{taskid},#{userid})")
-//    public int insertPic(String url,String result, int taskid, String userid);
 
 
-    //    @Select("select * from isend where taskid=#{id}")
     @Select("select * from isend where taskid=#{id} and (result=0 or result=1 or  result=2)")
     public List<Isend> getPics(int taskid);
     @Select("select * from isend where taskid=#{id} and result=0")
@@ -25,17 +22,6 @@ public interface PicDao {
     @Select("select * from isend where taskid=#{id} and result=1")
     public List<Isend> getPicPass(int taskid);
 
-//    @Select("select * from picture where taskid=#{id}")
-//    public List<Pic> getPics(int taskid);
-//    @Select("select * from picture where taskid=#{id} and result=0")
-//    public List<Pic> getPicUnPass(int taskid);
-//    @Select("select * from picture where taskid=#{id} and result=2")
-//    public List<Pic> getPicUnFinish(int taskid);
-//    @Select("select * from picture where taskid=#{id} and result=1")
-//    public List<Pic> getPicPass(int taskid);
-
-//    @Update("update picture set result = #{result} where picid=#{picid}")
-//    public int alterResult(int picid,String result);
     // 0不通过，1通过，2未提交
     // 默认未提交
     @Update("update picture set photo = #{photo},result=#{result} where (userid=#{userid} and taskid=#{taskid})")
@@ -50,7 +36,5 @@ public interface PicDao {
     @Select("select count(*) from picture where userid=#{userid} and result=2")
     public int getUserTask(String userid);
 
-//    @Delete("delete from picture where picid = #{picid}")
-//    public int deletePic(int picid);
 
 }
