@@ -7,6 +7,8 @@ public class Isend {
     String userid;
     int ifend;
     int result;
+    String memname;
+    int picid;
 
     @Override
     public String toString() {
@@ -17,7 +19,25 @@ public class Isend {
                 ", userid='" + userid + '\'' +
                 ", ifend=" + ifend +
                 ", result=" + result +
+                ", memname='" + memname + '\'' +
+                ", picid=" + picid +
                 '}';
+    }
+
+    public int getPicid() {
+        return picid;
+    }
+
+    public void setPicid(int picid) {
+        this.picid = picid;
+    }
+
+    public String getMemname() {
+        return memname;
+    }
+
+    public void setMemname(String memname) {
+        this.memname = memname;
     }
 
     public int getResult() {

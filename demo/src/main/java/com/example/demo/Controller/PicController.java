@@ -129,33 +129,33 @@ public class PicController {
             return "对不起，我们出了错误！";
         }
 
-        @ResponseBody
-        @GetMapping("/getPic")
-        public List<Pic> getTask ( @RequestParam("id") int id){
-            List<Pic> result = picService.getPics(id);
-            return result;
-        }
+    @ResponseBody
+    @GetMapping("/getPic")
+    public List<Isend> getTask ( @RequestParam("id") int id){
+        List<Isend> result = picService.getPics(id);
+        return result;
+    }
 
-        @ResponseBody
-        @GetMapping("/getPicUnPass")
-        public List<Pic> getPicUnPass ( @RequestParam("id") int id){
-            List<Pic> result = picService.getPicUnPass(id);
-            return result;
-        }
+    @ResponseBody
+    @GetMapping("/getPicUnPass")
+    public List<Isend> getPicUnPass ( @RequestParam("id") int id){
+        List<Isend> result = picService.getPicUnPass(id);
+        return result;
+    }
 
-        @ResponseBody
-        @GetMapping("/getPicUnFinish")
-        public List<Pic> getPicUnFinish ( @RequestParam("id") int id){
-            List<Pic> result = picService.getPicUnFinish(id);
-            return result;
-        }
+    @ResponseBody
+    @GetMapping("/getPicUnFinish")
+    public List<Isend> getPicUnFinish ( @RequestParam("id") int id){
+        List<Isend> result = picService.getPicUnFinish(id);
+        return result;
+    }
 
-        @ResponseBody
-        @GetMapping("/getPicPass")
-        public List<Pic> getPicPass ( @RequestParam("id") int id){
-            List<Pic> result = picService.getPicPass(id);
-            return result;
-        }
+    @ResponseBody
+    @GetMapping("/getPicPass")
+    public List<Isend> getPicPass ( @RequestParam("id") int id){
+        List<Isend> result = picService.getPicPass(id);
+        return result;
+    }
 
         @ResponseBody
         @GetMapping("/getPicD")

@@ -1,5 +1,6 @@
 package com.example.demo.Dao;
 
+import com.example.demo.Entity.Isend;
 import com.example.demo.Entity.Pic;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
@@ -14,15 +15,24 @@ public interface PicDao {
 //    public int insertPic(String url,String result, int taskid, String userid);
 
 
+    //    @Select("select * from isend where taskid=#{id}")
+    @Select("select * from isend where taskid=#{id} and (result=0 or result=1 or  result=2)")
+    public List<Isend> getPics(int taskid);
+    @Select("select * from isend where taskid=#{id} and result=0")
+    public List<Isend> getPicUnPass(int taskid);
+    @Select("select * from isend where taskid=#{id} and result=2")
+    public List<Isend> getPicUnFinish(int taskid);
+    @Select("select * from isend where taskid=#{id} and result=1")
+    public List<Isend> getPicPass(int taskid);
 
-    @Select("select * from picture where taskid=#{id}")
-    public List<Pic> getPics(int taskid);
-    @Select("select * from picture where taskid=#{id} and result=0")
-    public List<Pic> getPicUnPass(int taskid);
-    @Select("select * from picture where taskid=#{id} and result=2")
-    public List<Pic> getPicUnFinish(int taskid);
-    @Select("select * from picture where taskid=#{id} and result=1")
-    public List<Pic> getPicPass(int taskid);
+//    @Select("select * from picture where taskid=#{id}")
+//    public List<Pic> getPics(int taskid);
+//    @Select("select * from picture where taskid=#{id} and result=0")
+//    public List<Pic> getPicUnPass(int taskid);
+//    @Select("select * from picture where taskid=#{id} and result=2")
+//    public List<Pic> getPicUnFinish(int taskid);
+//    @Select("select * from picture where taskid=#{id} and result=1")
+//    public List<Pic> getPicPass(int taskid);
 
 //    @Update("update picture set result = #{result} where picid=#{picid}")
 //    public int alterResult(int picid,String result);

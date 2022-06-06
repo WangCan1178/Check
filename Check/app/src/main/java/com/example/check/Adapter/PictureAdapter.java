@@ -21,14 +21,15 @@ import com.example.check.R;
 
 import java.util.List;
 
-public class PictureAdapter extends ArrayAdapter<Picture> {
-    public PictureAdapter(@NonNull Context context, int resource, @NonNull List<Picture> tasks){
+public class PictureAdapter extends ArrayAdapter<Isend> {
+    public PictureAdapter(@NonNull Context context, int resource, @NonNull List<Isend> tasks){
         super(context,resource,tasks);
     }
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Picture picture = getItem(position);
+//        Picture picture = getItem(position);
+        Isend picture =getItem(position);
         //为每一个子项加载设定的布局
         View view= LayoutInflater.from(getContext()).inflate(R.layout.picture_item,parent,false);
         //分别获取 image view 和 textview 的实例
@@ -40,7 +41,8 @@ public class PictureAdapter extends ArrayAdapter<Picture> {
 
 //        photo.setImageURI(picture.getPhoto());//获取到的url在界面上显示成图片,没写
 
-        userid.setText(picture.getUserid());
+//        userid.setText(picture.getUserid());
+        userid.setText(picture.getMemname());
 //        Log.d("hhh",userid.getText().toString());
         picid.setText(Integer.toString(picture.getPicid()));
 //        Log.d("hhh",Integer.toString(picture.getResult()));
