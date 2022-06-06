@@ -51,7 +51,8 @@ public class TaskActivity extends Activity {
 
     private ListView listView;
     private String baseURL = "http://10.0.2.2:9000/pic";
-    private List<Picture> pics;
+    //    private List<Picture> pics;
+    private List<Isend> pics;
     private PictureAdapter adapter;
     private Handler handler;
     private float p1=0.0f;
@@ -116,10 +117,11 @@ public class TaskActivity extends Activity {
                 }else {
                     try {
                         jsonArray = new JSONArray(result);
-
                         for(int i=0;i<jsonArray.length();i++){
-                            Picture picture = new Picture();
-                            picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
+                            Isend picture = new Isend();
+//                            Picture picture = new Picture();
+//                            picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
+                            picture.setMemname(jsonArray.getJSONObject(i).getString("memname"));
                             picture.setPicid(jsonArray.getJSONObject(i).getInt("picid"));
                             picture.setResult(jsonArray.getJSONObject(i).getInt("result"));
                             pics.add(picture);
@@ -153,10 +155,10 @@ public class TaskActivity extends Activity {
                 e.printStackTrace();
             }
         }
-//        System.out.println("all:"+all);
-//        System.out.println("unfinish:"+unfinish);
-//        System.out.println("unpass:"+unpass);
-//        System.out.println("pass:"+pass);
+        System.out.println("all:"+all);
+        System.out.println("unfinish:"+unfinish);
+        System.out.println("unpass:"+unpass);
+        System.out.println("pass:"+pass);
         id_tv_1 = findViewById(R.id.id_tv_1);
         id_tv_2 = findViewById(R.id.id_tv_2);
         id_tv_3 = findViewById(R.id.id_tv_3);
@@ -168,11 +170,10 @@ public class TaskActivity extends Activity {
 //      System.out.println("p1::"+(float)pass/(float)all);
 //      System.out.println("p2::"+unpass/all);
 //      System.out.println("p3::"+unfinish/all);
-//      System.out.println("p1:"+p1+"    p2:"+p2+"   p3:"+p3);
+        System.out.println("p1:"+p1+"    p2:"+p2+"   p3:"+p3);
         ColorRandom colorRandom = new ColorRandom(3);
         for (int i = 0; i < 3; i++) {
             int colors = (int) colorRandom.getColors().get(i);
-            // 这个是算百分比的，我直接设定了固定的数字
             switch (i){
                 case 0:
                     pieModelList.add(new PieModel(colors, p1));
@@ -270,8 +271,10 @@ public class TaskActivity extends Activity {
                         jsonArray = new JSONArray(result);
                         unpass=jsonArray.length();
                         for(int i=0;i<jsonArray.length();i++){
-                            Picture picture = new Picture();
-                            picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
+//                            Picture picture = new Picture();
+                            Isend picture = new Isend();
+//                            picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
+                            picture.setMemname(jsonArray.getJSONObject(i).getString("memname"));
                             picture.setPicid(jsonArray.getJSONObject(i).getInt("picid"));
                             picture.setResult(jsonArray.getJSONObject(i).getInt("result"));
                             pics.add(picture);
@@ -330,8 +333,10 @@ public class TaskActivity extends Activity {
                         jsonArray = new JSONArray(result);
                         unfinish=jsonArray.length();
                         for(int i=0;i<jsonArray.length();i++){
-                            Picture picture = new Picture();
-                            picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
+//                            Picture picture = new Picture();
+                            Isend picture = new Isend();
+//                            picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
+                            picture.setMemname(jsonArray.getJSONObject(i).getString("memname"));
                             picture.setPicid(jsonArray.getJSONObject(i).getInt("picid"));
                             picture.setResult(jsonArray.getJSONObject(i).getInt("result"));
                             pics.add(picture);
@@ -390,8 +395,10 @@ public class TaskActivity extends Activity {
                         jsonArray = new JSONArray(result);
                         pass=jsonArray.length();
                         for(int i=0;i<jsonArray.length();i++){
-                            Picture picture = new Picture();
-                            picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
+//                            Picture picture = new Picture();
+                            Isend picture = new Isend();
+//                            picture.setUserid(jsonArray.getJSONObject(i).getString("userid"));
+                            picture.setMemname(jsonArray.getJSONObject(i).getString("memname"));
                             picture.setPicid(jsonArray.getJSONObject(i).getInt("picid"));
                             picture.setResult(jsonArray.getJSONObject(i).getInt("result"));
                             pics.add(picture);

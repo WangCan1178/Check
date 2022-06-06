@@ -90,4 +90,5 @@ public class Isend {
     public void setIfend(int ifend) {
         this.ifend = ifend;
     }
+
 }

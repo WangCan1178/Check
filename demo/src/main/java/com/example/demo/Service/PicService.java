@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import com.example.demo.Dao.PicDao;
+import com.example.demo.Entity.Isend;
 import com.example.demo.Entity.Pic;
 //import com.example.demo.Entity.Picture;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,19 +22,19 @@ public class PicService {
         this.picDao = picDao;
     }
 
-    public List<Pic> getPics(int taskid){
+    public List<Isend> getPics(int taskid){
         return picDao.getPics(taskid);
     }
 
-    public List<Pic> getPicUnPass(int taskid){
+    public List<Isend> getPicUnPass(int taskid){
         return picDao.getPicUnPass(taskid);
     }
 
-    public List<Pic> getPicUnFinish(int taskid){
+    public List<Isend> getPicUnFinish(int taskid){
         return picDao.getPicUnFinish(taskid);
     }
 
-    public List<Pic> getPicPass(int taskid){
+    public List<Isend> getPicPass(int taskid){
         return picDao.getPicPass(taskid);
     }
 
