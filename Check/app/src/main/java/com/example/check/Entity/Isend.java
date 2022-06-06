@@ -7,6 +7,39 @@ public class Isend {
     String userid;
     int ifend;
     int result;
+    int picid;
+    String memname;
+
+    @Override
+    public String toString() {
+        return "Isend{" +
+                "taskid=" + taskid +
+                ", title='" + title + '\'' +
+                ", groupid=" + groupid +
+                ", userid='" + userid + '\'' +
+                ", ifend=" + ifend +
+                ", result=" + result +
+                ", picid=" + picid +
+                ", memname='" + memname + '\'' +
+                '}';
+    }
+
+    public String getMemname() {
+        return memname;
+    }
+
+    public void setMemname(String memname) {
+        this.memname = memname;
+    }
+
+    public int getPicid() {
+        return picid;
+    }
+
+    public void setPicid(int picid) {
+        this.picid = picid;
+    }
+
 
     public int getResult() {
         return result;
@@ -56,18 +89,5 @@ public class Isend {
 
     public void setIfend(int ifend) {
         this.ifend = ifend;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Isend{" +
-                "taskid=" + taskid +
-                ", title='" + title + '\'' +
-                ", groupid=" + groupid +
-                ", userid='" + userid + '\'' +
-                ", ifend=" + ifend +
-                ", result=" +result+
-                '}';
     }
 }
