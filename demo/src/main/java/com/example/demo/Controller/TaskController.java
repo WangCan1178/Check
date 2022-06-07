@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Entity.Excel;
 import com.example.demo.Entity.Isend;
 import com.example.demo.Entity.Member;
 import com.example.demo.Entity.Task;
@@ -125,5 +126,11 @@ public class TaskController {
     public String alterdescription(@RequestParam("id") int id){
         String result =  taskService.getDescription(id);
         return result;
+    }
+
+    @ResponseBody
+    @GetMapping("/getExcel")
+    public List<Excel> getExcel(@RequestParam("taskid")int taskid){
+        return taskService.getExcel(taskid);
     }
 }

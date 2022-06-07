@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import com.example.demo.Dao.TaskDao;
+import com.example.demo.Entity.Excel;
 import com.example.demo.Entity.Isend;
 import com.example.demo.Entity.Task;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,5 +83,9 @@ public class TaskService {
     }
     public String getDescription(int id){
         return taskDao.getDescription(id);
+    }
+
+    public List<Excel> getExcel(int taskid){
+        return taskDao.getExcel(taskid);
     }
 }
