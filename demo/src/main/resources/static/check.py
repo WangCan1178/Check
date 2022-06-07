@@ -22,7 +22,7 @@ try:
             img_dst = file[y-5:y+h+5, x-5:x+w+5]
         if type(img_dst) != None:
             img_dst = numpy.resize(img_dst, (100, 100, 3))
-            cv2.imwrite('result.jpg', img_dst)
+            //cv2.imwrite('result.jpg', img_dst)
             color = numpy.sum(numpy.sum(img_dst, axis=1), axis=0)
             r, g, b = color[0], color[1], color[2]
             if r <= g-100000:
