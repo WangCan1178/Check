@@ -1,4 +1,9 @@
 <template>
+    <div>
+        <transition name="el-fade-in" @click="back = !back">
+            <img src="../assets/img/QQ图片20220607153231.png" v-show="back" style="width: 100%;height: 100%;background-size: 100%;">
+        </transition>
+    </div>
     <div class="login-wrap">
         <div class="ms-login">
             <div class="ms-title">check查客核查小帮手</div>
@@ -42,6 +47,7 @@ import router from "../router";
 export default {
     data(){
         return{
+            back:true,
             param : {
                 username: "",
                 password: "",
@@ -158,4 +164,27 @@ export default {
     line-height: 30px;
     color: #fff;
 }
+
+/*.fade-leave-active {*/
+/*    animation: bounce-out .3s;*/
+/*}*/
+/*@keyframes bounce-out {*/
+/*    0% {*/
+/*        transform: translate3d(0, 0, 0);*/
+/*    }*/
+/*    25% {*/
+/*        transform: translate3d(25%, 0, 0);*/
+/*    }*/
+/*    50% {*/
+/*        transform: translate3d(50%, 0, 0);*/
+/*    }*/
+/*    75% {*/
+/*        transform: translate3d(75%, 0, 0);*/
+/*    }*/
+/*    100% {*/
+/*        transform: translate3d(100%, 0, 0);*/
+/*    }*/
+/*}*/
+
+
 </style>

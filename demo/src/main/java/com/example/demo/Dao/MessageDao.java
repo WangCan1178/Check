@@ -26,4 +26,11 @@ public interface MessageDao {
     @Select("select * from message where userid=#{uid}")
     public List<Message> getMessage(String uid);
 
+    //修改isread
+    @Update("update message set isread=#{isread} where mesid=#{mesid}")
+    public int alterRead(int isread,int mesid);
+
+    @Delete("delete from message where mesid=#{mesid}")
+    public int deleteMes(int mesid);
+
 }

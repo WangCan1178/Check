@@ -69,11 +69,10 @@
 
         <el-dialog :title="memberTitle" v-model="isedit" >
             <el-form >
-                <el-image :src="photo.pUrl">
-                    <div slot="error" class="image-slot">
-                        <i class="el-icon-picture-outline"></i>
-                    </div>
-                </el-image>
+                <img :src="photo.pUrl">
+<!--                        <div slot="error" class="image-slot">-->
+<!--                            <i class="el-icon-picture-outline"></i>-->
+<!--                        </div>-->
                 <div style="font-size: 16px;margin-top: 10px">
                     识别结果：
                         <span v-show="!edit1">{{photo.pResult}}</span>
@@ -231,7 +230,7 @@
                 for(let i=0;i<response.data.length;i++){
                     var pic = {
                         id:response.data[i].picid,
-                        name:response.data[i].userid,
+                        name:response.data[i].memname,
                         isFinish: false,
                         isPass: false,
                     }
@@ -273,12 +272,23 @@
                     }
                 ).then((response) => {
                     this.photo.pid = response.data.picid;
-                    this.photo.pUrl = response.data.photo;
+                    //this.photo.pUrl = response.data.photo;
+                    //console.log(this.photo.pUrl)
                     if(response.data.result === "0"){
                         this.photo.pResult = "未通过"
                     }else if (response.data.result === "1"){
                         this.photo.pResult = "已通过"
                     }
+                    let arr = response.data.photo.split("\\")
+                    this.photo.pUrl = "http://localhost:9000/pics/" + arr[arr.length-1]
+                    // let reader = new FileReader()
+                    // reader.readAsDataURL(response.data.photo)
+                    // reader.onload = ()=>{
+                    //     this.photo.pUrl = reader.result
+                    // }
+                    // reader.onerror = function (error) {
+                    //     console.log("ERROR:",error)
+                    // }
                 }).catch((err) => {
                     this.$message.error("出错了！");
                     console.log(err);

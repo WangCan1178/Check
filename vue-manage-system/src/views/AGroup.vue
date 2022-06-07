@@ -30,10 +30,17 @@
                 </el-table-column>
             </el-table>
             <!--todo 分页-->
+            <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handlecurrentChange"
+                    :current-page="currentPage"
+                    layout="total,prev, pager, next, jumper"
+                    :total="totalCount"
+                    :hide-on-single-page="false"
+            ></el-pagination>
         </el-card>
 
-        <el-dialog :title="dialogtitle" v-model="editTaskVisible">
-                <div style="font-size: 16px;margin-bottom: 20px" >{{task.description}}</div>
+        <el-dialog :title="task.title" v-model="editTaskVisible">
                 <el-form >
                     <!--TODO 修改链接 略缩图-->
                     <!--https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/ -->
@@ -41,6 +48,7 @@
                                accept="image/png,image/jpg,image/jpeg"
                                :file-list="fileLists"
                                :on-preview="handlePreview"
+                               :on-success="submitSuccess"
                                :on-change="handleChange"
                                :on-remove="handleRemove"
                                ref="upload"
@@ -54,7 +62,9 @@
                         <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
                     </el-upload>
                 </el-form>
-<!--            <div>识别结果：已通过</div>-->
+            <div style="font-size: 16px;margin-top: 10px" v-show="Visible">
+                {{photo.pResult}}
+            </div>
             <template #footer>
                 <span class="dialog-footer">
                     <el-button @click="editTaskVisible = false">取 消</el-button>
@@ -87,6 +97,8 @@
     import {reactive, ref, getCurrentInstance} from "vue"
     import {useRoute,useRouter} from "vue-router"
     import {ElMessage} from "element-plus"
+    import Qs from "qs"
+    import axios from "axios";
     export default {
         name: "Agroup",
         path:"/add/:id",
@@ -99,22 +111,25 @@
                 route:useRoute(),
                 groupName: "",
                 taskList: [],
-                fileList: {
-                    name:"",
-                    url:"",
-                },
                 editTaskVisible:false,
                 dialogtitle: "",
                 task:{
                     id:"",
                     title:"",
                     description:"",
-                    isFinish: false
                 },
-                photoU: "",
                 nameVisible:false,
                 memName:"",
                 edit2:false,
+                fileLists:[],
+                photo:{
+                    pUrl:"",
+                    pResult:"",
+                    pid:""
+                },
+                Visible:false,
+                currentPage:1,
+                totalCount:1,
             }
         },
         mounted(){
@@ -141,14 +156,16 @@
                     }
                 }
             ).then((response) => {
+                //console.log(response.data);
                 if (response.data !== null){
-                    let task = {
-                        id:0,
-                        title:"",
-                        isFinish:false,
-                        isEnd:false
-                    };
                     for (let i=0;i<response.data.length;i++){
+                        //console.log(response.data[i])
+                        let task = {
+                            id:0,
+                            title:"",
+                            isFinish:false,
+                            isEnd:false
+                        };
                         task.id = response.data[i].taskid;
                         task.title = response.data[i].title;
                         if(response.data[i].ifend === 1){
@@ -156,6 +173,7 @@
                         }
                         this.taskList.push(task);
                     }
+                    this.totalCount = response.data.length
                 }
             }).catch((err) => {
                 this.$message.error("出错了！");
@@ -168,26 +186,58 @@
             }
         },
         methods: {
+            handleSizeChange(val){
+                this.pageSize = val;
+                this.currentPage = 1
+            },
+            handlecurrentChange(val){
+                this.currentPage = val
+            },
             write(index,row){
                 let idx = -1;
-                //TODO 获取任务信息
+                //获取任务信息
                 //TODO 有没有提交过的任务可能先查询图片进行一个显示
                 idx = index;
                 Object.keys(this.task).forEach( (item) =>{
                     this.task[item] = row[item];
                 });
-                this.dialogtitle = this.task.name;
-                this.taskdes = this.task.description;
-                this.editTaskVisible= true;
+                this.$axios.get(
+                    "http://localhost:9000/task/getTaskInfo",{
+                        params:{
+                            id:this.task.id,
+                        }
+                    }
+                ).then((response) => {
+                    this.task.description = response.data.description
+                }).catch((err) => {
+                    this.$message.error("出错了！");
+                    console.log(err);
+                });
+                //console.log(this.task)
+                this.editTaskVisible = true
             },
-            handleRemove(file, fileList) {
-
+            handleChange(file){
+                this.fileLists.push(file)
+            },
+            handleRemove() {
+                this.fileLists.pop()
             },
             submit(res){
-                const formData = new FormData();
-                formData.append("file",)
-                this.$refs.upload.submit();
-                this.$refs.upload.clearFiles();
+                let data = new FormData()
+                data.append("file",this.fileLists[0].raw);
+                data.append("userid",localStorage.getItem("userId"))
+                data.append("taskid",this.task.id)
+                data.append("type",this.task.description)
+                axios.defaults.headers.post['Content-Type'] = 'application/form-data;charset=UTF-8';
+                this.$axios.post(
+                    "http://localhost:9000/pic/add",data
+                ).then((response)=>{
+                    //console.log(response.data)
+                    this.photo.pResult = response.data
+                    this.Visible = true
+                }).catch((err)=>{
+                    console.log(err)
+                })
             },
             submitSuccess(res,file,fileList){
                 this.$message({

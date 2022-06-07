@@ -11,19 +11,21 @@
                     <el-table :data="state.unread" :show-header="false" style="width: 100%">
                         <el-table-column>
                             <template #default="scope">
-                                <span class="message-title">{{scope.row.title}}</span>
+                                <router-link :to="'/add/'+scope.row.groupid">
+                                    <span class="message-title">{{scope.row.title}}</span>
+                                </router-link>
                             </template>
                         </el-table-column>
                         <el-table-column prop="date" width="180"></el-table-column>
-                        <el-table-column width="120">
+                        <el-table-column width="120" align="center">
                             <template #default="scope">
                                 <el-button size="small" @click="handleRead(scope.$index)">标为已读</el-button>
                             </template>
                         </el-table-column>
                     </el-table>
                     <div class="handle-row">
-                        <!-- TODO 全部标为已读方法未实现-->
-                        <el-button type="primary">全部标为已读</el-button>
+                        <!-- 全部标为已读方法-->
+                        <el-button type="primary" @click="handleReadAll()">全部标为已读</el-button>
                     </div>
                 </el-tab-pane>
                 <el-tab-pane :label="`已读消息(${state.read.length})`" name="second">
@@ -31,18 +33,26 @@
                         <el-table :data="state.read" :show-header="false" style="width: 100%">
                             <el-table-column>
                                 <template #default="scope">
-                                    <span class="message-title">{{scope.row.title}}</span>
+                                    <router-link :to="'/add/'+scope.row.groupid">
+                                        <span class="message-title" style="color: black">{{scope.row.title}}</span>
+                                    </router-link>
                                 </template>
                             </el-table-column>
-                            <el-table-column prop="date" width="150"></el-table-column>
-                            <el-table-column width="120">
+                            <el-table-column prop="date" width="180"></el-table-column>
+                            <el-table-column width="100" align="center">
                                 <template #default="scope">
-                                    <el-button type="danger" @click="handleDel(scope.$index)">删除</el-button>
+                                    <el-button size="small" @click="handleUnread(scope.$index)">标为未读</el-button>
+                                </template>
+                            </el-table-column>
+                            <el-table-column width="100" align="center">
+                                <template #default="scope">
+                                    <el-button size="small" type="danger" @click="handleDel(scope.$index)">删除</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
                         <div class="handle-row">
-                            <el-button type="danger">删除全部</el-button>
+                            <el-button @click="handleUnreadAll()">全部标为未读</el-button>
+                            <el-button type="danger" @click="handleDelAll()">删除全部</el-button>
                         </div>
                     </template>
                 </el-tab-pane>
@@ -51,18 +61,23 @@
                         <el-table :data="state.recycle" :show-header="false" style="width: 100%">
                             <el-table-column>
                                 <template #default="scope">
-                                    <span class="message-title">{{scope.row.title}}</span>
+                                    <span class="message-title" style="color: black">{{scope.row.title}}</span>
                                 </template>
                             </el-table-column>
                             <el-table-column prop="date" width="150"></el-table-column>
-                            <el-table-column width="120">
+                            <el-table-column width="100" align="center">
                                 <template #default="scope">
-                                    <el-button @click="handleRestore(scope.$index)">还原</el-button>
+                                    <el-button size="small" @click="handleRestore(scope.$index)">还原</el-button>
+                                </template>
+                            </el-table-column>
+                            <el-table-column width="100" align="center">
+                                <template #default="scope">
+                                    <el-button size="small" type="danger" @click="deleteMes(scope.$index)">彻底删除</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
                         <div class="handle-row">
-                            <el-button type="danger">清空回收站</el-button>
+                            <el-button type="danger" @click="handleRestoreAll()">清空回收站</el-button>
                         </div>
                     </template>
                 </el-tab-pane>
@@ -75,55 +90,151 @@
 import { ref, reactive } from "vue";
 export default {
     name: "tabs",
-    setup() {
-        const message = ref("first");
-        const state = reactive({
-            //TODO 数据库获取消息
-            unread: [
-                {
-                    date: "2018-04-19 20:00:00",
-                    title: "【系统通知】该系统将于今晚凌晨2点到5点进行升级维护",
-                },
-                {
-                    date: "2018-04-19 21:00:00",
-                    title: "今晚12点整发大红包，先到先得",
-                },
-            ],
-            read: [
-                {
-                    date: "2018-04-19 20:00:00",
-                    title: "【系统通知】该系统将于今晚凌晨2点到5点进行升级维护",
-                },
-            ],
-            recycle: [
-                {
-                    date: "2018-04-19 20:00:00",
-                    title: "【系统通知】该系统将于今晚凌晨2点到5点进行升级维护",
-                },
-            ],
+    data(){
+        return{
+            message:"first",
+            state:{
+                unread:[],
+                read:[],
+                recycle: [],
+            }
+        }
+    },
+    mounted() {
+        this.$axios.get(
+            "http://localhost:9000/getMess",{
+                params:{
+                    userid:localStorage.getItem("userId")
+                }
+            }
+        ).then((response) => {
+            if (response.data !== null){
+                for (let i=0;i<response.data.length;i++){
+                    let message = {
+                        mesid:0,
+                        isread:-1,
+                        groupid:0,
+                        title:"",
+                        date:""
+                    }
+                    message.mesid = response.data[i].mesid;
+                    message.groupid = response.data[i].groupid;
+                    message.title = "您的任务\""+response.data[i].title+"\"还未完成，点击跳转完成";
+                    message.date = response.data[i].time;
+                    if (response.data[i].isread === 0){
+                        this.state.unread.push(message)
+                    }else if (response.data[i].isread === 1){
+                        this.state.read.push(message)
+                    }else {
+                        this.state.recycle.push(message)
+                    }
+                }
+            }
+        }).catch((err) => {
+            this.$message.error("出错了！");
+            console.log(err);
         });
+    },
+    methods:{
+        handleRead(index){
+            const item = this.state.unread.splice(index, 1);    //删除数组的值
+            console.log(item[0].mesid);
+            this.state.read = item.concat(this.state.read);       //合并数组
+            this.$axios.get(
+                "http://localhost:9000/alterRead",{
+                    params:{
+                        mesid:item[0].mesid,
+                        isread:1
+                    }
+                }
+            ).then((response) => {
 
-        const handleRead = (index) => {
-            const item = state.unread.splice(index, 1);    //删除数组的值
-            console.log(item);
-            state.read = item.concat(state.read);       //合并数组
-        };
-        const handleDel = (index) => {
-            const item = state.read.splice(index, 1);
-            state.recycle = item.concat(state.recycle);
-        };
-        const handleRestore = (index) => {
-            const item = state.recycle.splice(index, 1);
-            state.read = item.concat(state.read);
-        };
+            }).catch((err) => {
+                console.log(err);
+            });
+        },
+        handleDel(index){
+            const item = this.state.read.splice(index, 1);
+            this.state.recycle = item.concat(this.state.recycle);
+            this.$axios.get(
+                "http://localhost:9000/alterRead",{
+                    params:{
+                        mesid:item[0].mesid,
+                        isread:2
+                    }
+                }
+            ).then((response) => {
 
-        return {
-            message,
-            state,
-            handleRead,
-            handleDel,
-            handleRestore,
-        };
+            }).catch((err) => {
+                console.log(err);
+            });
+        },
+        handleUnread(index){
+            const item = this.state.read.splice(index, 1);
+            this.state.unread = item.concat(this.state.unread);
+            this.$axios.get(
+                "http://localhost:9000/alterRead",{
+                    params:{
+                        mesid:item[0].mesid,
+                        isread:0
+                    }
+                }
+            ).then((response) => {
+
+            }).catch((err) => {
+                console.log(err);
+            });
+        },
+        handleRestore(index){
+            const item = this.state.recycle.splice(index, 1);
+            this.state.read = item.concat(this.state.read);
+            this.$axios.get(
+                "http://localhost:9000/alterRead",{
+                    params:{
+                        mesid:item[0].mesid,
+                        isread:1
+                    }
+                }
+            ).then((response) => {
+
+            }).catch((err) => {
+                console.log(err);
+            });
+        },
+        deleteMes(index){
+            const item = this.state.recycle.splice(index, 1);
+            this.$axios.get(
+                "http://localhost:9000/deleteMes",{
+                    params:{
+                        mesid:item[0].mesid,
+                    }
+                }
+            ).then((response) => {
+
+            }).catch((err) => {
+                console.log(err);
+            });
+        },
+        handleReadAll(){
+            for(let i=0;i<this.state.unread.length;i++){
+                this.handleRead(i);
+            }
+        },
+        handleDelAll(){
+            for (let i=0;i<this.state.read.length;i++){
+                this.handleDel(i);
+            }
+        },
+        handleUnreadAll(){
+            for (let i=0;i<this.state.read.length;i++){
+                this.handleUnread(i);
+            }
+        },
+        handleRestoreAll(){
+            for (let i=0;i<this.state.recycle.length;i++){
+                this.deleteMes(i);
+            }
+        }
     },
 };
 </script>

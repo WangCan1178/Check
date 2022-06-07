@@ -1,11 +1,14 @@
 package com.example.demo.Entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
 public class Message {
+    int mesid;
     String userid;
     int isread;
     int groupid;
@@ -23,6 +26,14 @@ public class Message {
                 ", groupid=" + groupid +
                 ", time=" + time +
                 '}';
+    }
+
+    public int getMesid() {
+        return mesid;
+    }
+
+    public void setMesid(int mesid) {
+        this.mesid = mesid;
     }
 
     public String getTitle() {
