@@ -2,7 +2,7 @@ package com.example.demo.Entity;
 
 public class Pic {
     int picid;
-    String url;
+    String photo;
     String result;
     int taskid;
     String userid;
@@ -15,12 +15,12 @@ public class Pic {
         this.picid = picid;
     }
 
-    public String getUrl() {
-        return url;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getResult() {
@@ -51,7 +51,7 @@ public class Pic {
     public String toString() {
         return "Picture{" +
                 "picid=" + picid +
-                ", url='" + url + '\'' +
+                ", url='" + photo + '\'' +
                 ", result='" + result + '\'' +
                 ", taskid=" + taskid +
                 ", userid='" + userid + '\'' +
