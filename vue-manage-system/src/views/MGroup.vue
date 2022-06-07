@@ -30,6 +30,14 @@
                 </el-table-column>
             </el-table>
             <!--todo 分页-->
+            <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handlecurrentChange"
+                    :current-page="currentPage"
+                    layout="total,prev, pager, next, jumper"
+                    :total="totalCount"
+                    :hide-on-single-page="false"
+            ></el-pagination>
         </el-card>
 
         <el-dialog title="成员列表" v-model="memberVisible">
@@ -163,6 +171,8 @@
                         message: "请输入任务时间"
                     }],
                 },
+                currentPage:1,
+                totalCount:1,
             }
         },
         mounted(){
@@ -195,6 +205,7 @@
                     for(let i=0;i<response.data.length;i++){
                         this.taskList.push(response.data[i])
                     }
+                    this.totalCount = response.data.length
                 }
             }).catch((err) => {
                 this.$message.error("出错了！");
@@ -207,6 +218,13 @@
             }
         },
         methods: {
+            handleSizeChange(val){
+                this.pageSize = val;
+                this.currentPage = 1
+            },
+            handlecurrentChange(val){
+                this.currentPage = val
+            },
             FormatTime(time){
                 var now=new Date(time);
                 var year=now.getFullYear();

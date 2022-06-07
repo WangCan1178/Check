@@ -5,6 +5,7 @@ import com.example.demo.Entity.Isend;
 import com.example.demo.Entity.Message;
 import com.example.demo.Service.MessService;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,9 +14,18 @@ import java.util.List;
 
 @Controller
 @CrossOrigin
-@RequestMapping("/pic")
+@RequestMapping("")
 public class MessageController {
     private MessService messService;
+
+    public MessService getMessService() {
+        return messService;
+    }
+
+    @Autowired
+    public void setMessService(MessService messService) {
+        this.messService = messService;
+    }
 
     // 根据用户id获取消息列表
     @ResponseBody
@@ -32,6 +42,18 @@ public class MessageController {
     @GetMapping("/sendMess")
     public void getMess (@RequestParam("tid") int tid){
         messService.sendMess(tid);
+    }
+
+    @ResponseBody
+    @GetMapping("/alterRead")
+    public int alterRead(@RequestParam("isread")int isread,@RequestParam("mesid")int mesid){
+        return messService.alterRead(isread,mesid);
+    }
+
+    @ResponseBody
+    @GetMapping("/deleteMes")
+    public int deleteMes(@RequestParam("mesid")int mesid){
+        return messService.deleteMes(mesid);
     }
 
 }

@@ -30,6 +30,14 @@
                 </el-table-column>
             </el-table>
             <!--todo 分页-->
+            <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handlecurrentChange"
+                    :current-page="currentPage"
+                    layout="total,prev, pager, next, jumper"
+                    :total="totalCount"
+                    :hide-on-single-page="false"
+            ></el-pagination>
         </el-card>
 
         <el-dialog :title="task.title" v-model="editTaskVisible">
@@ -119,7 +127,9 @@
                     pResult:"",
                     pid:""
                 },
-                Visible:false
+                Visible:false,
+                currentPage:1,
+                totalCount:1,
             }
         },
         mounted(){
@@ -163,6 +173,7 @@
                         }
                         this.taskList.push(task);
                     }
+                    this.totalCount = response.data.length
                 }
             }).catch((err) => {
                 this.$message.error("出错了！");
@@ -175,6 +186,13 @@
             }
         },
         methods: {
+            handleSizeChange(val){
+                this.pageSize = val;
+                this.currentPage = 1
+            },
+            handlecurrentChange(val){
+                this.currentPage = val
+            },
             write(index,row){
                 let idx = -1;
                 //获取任务信息

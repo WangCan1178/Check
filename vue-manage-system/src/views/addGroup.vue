@@ -37,8 +37,9 @@
             <el-pagination
                     @size-change="handleSizeChange"
                     @current-change="handlecurrentChange"
-                    layout="prev, pager, next, jumper"
-                    :total="500"
+                    :current-page="currentPage"
+                    layout="total,prev, pager, next, jumper"
+                    :total="totalCount"
                     :hide-on-single-page="false"
             ></el-pagination>
         </el-card>
@@ -60,6 +61,8 @@
                     groupid: "",
                     name : "",
                 },
+                currentPage:1,
+                totalCount:1,
             }
         },
         mounted(){
@@ -74,6 +77,7 @@
                     console.log(response.data[i]);
                     this.addList.push(response.data[i]);
                 }
+                this.totalCount = response.data.length
             }).catch((err) => {
                 this.$message.error("出错了！");
                 console.log(err);
@@ -81,10 +85,11 @@
         },
         methods:{
             handleSizeChange(val){
-
+                this.pageSize = val;
+                this.currentPage = 1
             },
             handlecurrentChange(val){
-
+                this.currentPage = val
             },
             quit(index,row){
                 //退出群组

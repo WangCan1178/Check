@@ -230,7 +230,7 @@
                 for(let i=0;i<response.data.length;i++){
                     var pic = {
                         id:response.data[i].picid,
-                        name:response.data[i].userid,
+                        name:response.data[i].memname,
                         isFinish: false,
                         isPass: false,
                     }
