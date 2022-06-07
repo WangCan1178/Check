@@ -35,7 +35,7 @@
                     <template #header>
                         <div class="clearfix">
                             <span style="font-size: 18px">完成情况</span>
-                            <el-button style="float: right; padding: 3px 0" type="text" @click="notice()">通知未完成成员</el-button>
+                            <el-button style="float: right; padding: 3px 0" type="text" @click="notice()" v-show="noticable">通知未完成成员</el-button>
                             <el-button style="float: right; padding: 3px 0;margin-right: 15px" type="text" @click="">导出excel</el-button>
                         </div>
                     </template>
@@ -152,6 +152,7 @@
                     isPass: false,
                 },
                 edit1:false,
+                noticable:true,
             }
         },
         mounted(){
@@ -172,10 +173,12 @@
                     this.task.endtime = response.data.endtime;
                     //与当前时间对比修改isFinish
                     if(compareTime(response.data.endtime)){
-                        this.task.isFinish = false
+                        this.task.isFinish = false;
+                        this.noticable = true;
                     }
                     else {
-                        this.task.isFinish = true
+                        this.task.isFinish = true;
+                        this.noticable = false;
                     }
                 }
             }).catch((err) => {
@@ -318,7 +321,19 @@
                 });
             },
             notice(){
-            //TODO 通知函数
+                //通知函数
+                this.$axios.get(
+                    "http://localhost:9000/sendMess", {
+                        params:{
+                            tid:this.route.params.id,
+                        }
+                    }
+                ).then((response) => {
+                    this.$message.success("成功提醒！");
+                }).catch((err) => {
+                    this.$message.error("出错了！");
+                    console.log(err);
+                });
             },
             FormatTime(time){
                 var now=new Date(time);

@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad705274-f5a1-4b9c-8732-5966b95b7ad0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/img/QQ图片20220607153231.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.~README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../.~README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Dao/MessageDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Dao/MessageDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Entity/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Service/MessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Service/MessService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/AGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AGroup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/MGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MGroup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Message.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Task.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Task.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/addGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/addGroup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/manageGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/manageGroup.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +68,7 @@
       <workItem from="1653984669329" duration="4049000" />
       <workItem from="1654131711542" duration="720000" />
       <workItem from="1654140907846" duration="600000" />
-      <workItem from="1654586478006" duration="7337000" />
+      <workItem from="1654586478006" duration="9288000" />
     </task>
     <servers />
   </component>
