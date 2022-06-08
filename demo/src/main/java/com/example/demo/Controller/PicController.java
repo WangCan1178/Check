@@ -210,6 +210,5 @@ public class PicController {
         return picService.second(userid, taskid);
     }
 
-
 }
 
