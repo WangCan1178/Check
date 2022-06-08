@@ -69,7 +69,7 @@
 
         <el-dialog :title="memberTitle" v-model="isedit" >
             <el-form >
-                <img :src="photo.pUrl">
+                <img :src="photo.pUrl" style="width: 100%">
 <!--                        <div slot="error" class="image-slot">-->
 <!--                            <i class="el-icon-picture-outline"></i>-->
 <!--                        </div>-->

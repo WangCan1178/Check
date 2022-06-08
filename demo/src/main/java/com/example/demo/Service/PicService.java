@@ -55,4 +55,8 @@ public class PicService {
         return picDao.getUserTask(userid);
     }
 
+    public Pic second(String userid,int taskid){
+        return picDao.second(userid,taskid);
+    }
+
 }

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ad705274-f5a1-4b9c-8732-5966b95b7ad0" name="Default Changelist" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/ipad下载账号.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Check/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Check/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/check.py" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/check.py" afterDir="false" />
@@ -41,17 +42,15 @@
 =======
       <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Entity/Excel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.~README.md" beforeDir="false" />
+=======
+>>>>>>> 71492115659b43a7d0fb719db1ae00ddb474a23c
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Dao/TaskDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Dao/TaskDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/610.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/eb063fdb969a4d37b17446032def0be1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Dao/PicDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Dao/PicDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Service/PicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Service/PicService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/AGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AGroup.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Task.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Task.vue" afterDir="false" />
 >>>>>>> 6e4c1277a126f44b8689272fbde05e910e61ab5c
     </list>
@@ -118,11 +117,16 @@
       <workItem from="1654131711542" duration="720000" />
       <workItem from="1654140907846" duration="600000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1654586478006" duration="7337000" />
       <workItem from="1654606543091" duration="1778000" />
 =======
       <workItem from="1654586478006" duration="15982000" />
 >>>>>>> 6e4c1277a126f44b8689272fbde05e910e61ab5c
+=======
+      <workItem from="1654586478006" duration="16184000" />
+      <workItem from="1654651704161" duration="1349000" />
+>>>>>>> 71492115659b43a7d0fb719db1ae00ddb474a23c
     </task>
     <servers />
   </component>

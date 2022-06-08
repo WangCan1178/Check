@@ -201,5 +201,13 @@ public class PicController {
         } else {
             return "failed";
         }
+
+        @ResponseBody
+        @GetMapping("/second")
+        public Pic second (@RequestParam("userid") String userid,@RequestParam("taskid") int taskid){
+            return picService.second(userid,taskid);
+        }
+
+
     }
 }
