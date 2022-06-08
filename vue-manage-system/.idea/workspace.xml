@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad705274-f5a1-4b9c-8732-5966b95b7ad0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Check/app/src/main/java/com/example/check/register/Contact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Check/app/src/main/res/drawable-v24/verify.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Check/app/src/main/res/layout/activity_contact.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Check/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Check/app/src/main/res/values-land/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Check/app/src/main/res/values-w1240dp/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Check/app/src/main/res/values-w600dp/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Check/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Check/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/default.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Check/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Check/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Check/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Check/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Check/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Check/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Check/app/src/main/java/com/example/check/fragment/myFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Check/app/src/main/java/com/example/check/fragment/myFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Check/app/src/main/res/layout/fragment_my.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Check/app/src/main/res/layout/fragment_my.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Check/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Check/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/HIT常用网址.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/QQ图片20200317194559.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/ipad下载账号.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/未标题-1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

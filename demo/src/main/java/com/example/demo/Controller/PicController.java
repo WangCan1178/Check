@@ -18,7 +18,7 @@ import com.tencentcloudapi.common.exception.TencentCloudSDKException;
 import com.tencentcloudapi.ocr.v20181119.OcrClient;
 import com.tencentcloudapi.ocr.v20181119.models.*;
 import sun.misc.BASE64Encoder;
-
+//
 @Controller
 @CrossOrigin
 @RequestMapping("/pic")
@@ -45,7 +45,7 @@ public class PicController {
         inputFile.close();
         return new BASE64Encoder().encode(buffer);
     }
-
+// 很抱歉在使用的过程中给您带来的不好体验，诚挚邀请您提出有关app使用的意见或建议，我们会及时修复！发布者QQ：1178272817，微信“13145318073。另外，此项目已在github进行开源，如果您感兴趣，访问：。
     public String check(String type, String file) {
         // 1特征，2文字
         //        String path = "./src/main/resources/static/check.py";

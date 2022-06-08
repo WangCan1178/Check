@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.example.check.AddGroupActivity;
 import com.example.check.LoginActivity;
 import com.example.check.R;
+import com.example.check.register.Contact;
 import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 
 import java.io.IOException;
@@ -90,6 +91,7 @@ public class myFragment extends Fragment {
     private TextView my_pass;
     private TextView my_id;
     private TextView my_identify;
+    private TextView contact;
     private Button but_exit;
     private Button but_cancel;
     private String baseURL = "http://10.0.2.2:9000";
@@ -104,6 +106,7 @@ public class myFragment extends Fragment {
         my_pass = (TextView) view.findViewById(R.id.my_pass);
         my_identify = (TextView) view.findViewById(R.id.my_identify);
         but_exit = (Button) view.findViewById(R.id.but_exit2);
+        contact = (TextView) view.findViewById(R.id.contact);
 
         but_cancel = (Button) view.findViewById(R.id.but_cancel2);
         SharedPreferences sp = getActivity().getSharedPreferences("onClick",MODE_PRIVATE);
@@ -121,6 +124,13 @@ public class myFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), com.example.check.register.RevisePassActivity.class);
+                startActivity(intent);
+            }
+        });
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Contact.class);
                 startActivity(intent);
             }
         });

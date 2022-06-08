@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.check">
+    package="com.example.check" >
     <!-- 可选权限说明 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许应用程序联网（必须） -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 允许访问WiFi网络状态信息（必须） -->
@@ -30,10 +30,11 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".StartActivity">
+        android:theme="@style/AppTheme" >
+        <activity android:name=".StartActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -47,13 +48,14 @@
         <activity android:name=".menu.joinActivity" />
         <activity android:name=".AddGroupActivity" />
         <activity android:name=".register.ForgetPassActivity" />
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".menu.MainActivity" />
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".register.SmsActivity" />
         <activity android:name=".register.Register2Activity" />
         <activity android:name=".register.Register3Activity" />
         <activity android:name=".register.RevisePassActivity" />
+        <activity android:name=".register.Contact"/>
     </application>
 
 </manifest>
