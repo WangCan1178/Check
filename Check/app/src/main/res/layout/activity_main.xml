@@ -19,7 +19,8 @@
         android:id="@+id/navigation"
         android:background="@color/white"
         app:itemIconTint="@color/bg_tab"
-        android:textSize="20dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
         app:itemTextColor="@color/bg_tab"
         app:menu="@menu/navigation"        />
 

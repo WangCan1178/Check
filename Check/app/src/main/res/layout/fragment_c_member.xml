@@ -18,23 +18,25 @@
 
             <TextView
                 android:id="@+id/but_cgroup"
-                android:layout_width="300dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:text="成员列表"
+                android:layout_marginLeft="10dp"
                 android:textColor="@color/blue"
                 android:textSize="40dp"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/but_add_role"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/blue"
                 android:textColor="@color/white"
+                android:layout_marginRight="10dp"
                 android:textStyle="bold"
                 android:text="添加管理员" />
 

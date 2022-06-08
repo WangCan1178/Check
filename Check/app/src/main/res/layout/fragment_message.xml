@@ -19,14 +19,14 @@
             android:layout_gravity="right"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/but_return"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:src="@drawable/return3" />
+<!--            <ImageView-->
+<!--                android:id="@+id/but_return"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:src="@drawable/return3" />-->
 
             <TextView
                 android:id="@+id/but_cgroup"
@@ -35,7 +35,7 @@
                 android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
-                android:text="任务列表"
+                android:text="消息列表"
                 android:textColor="@color/blue"
                 android:textSize="40dp"
                 android:textStyle="bold" />
@@ -44,8 +44,6 @@
                 android:id="@+id/but_refresh"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:src="@drawable/refresh" />
 
@@ -67,13 +65,12 @@
         android:layout_height="match_parent">
 
         <ListView
-            android:id="@+id/tasklist1"
+            android:id="@+id/messagelist"
             android:layout_width="match_parent"
             android:layout_marginTop="80dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_height="wrap_content"
-            android:divider="@drawable/line">
+            android:layout_height="wrap_content">
         </ListView>
     </LinearLayout>
 

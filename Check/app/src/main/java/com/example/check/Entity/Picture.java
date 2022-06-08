@@ -2,7 +2,7 @@ package com.example.check.Entity;
 
 public class Picture {
     int picid;
-    int result;
+    String result;
     int taskid;
     String userid;
     String photo;
@@ -15,11 +15,11 @@ public class Picture {
         this.picid = picid;
     }
 
-    public int getResult() {
+    public String getResult() {
         return result;
     }
 
-    public void setResult(int result) {
+    public void setResult(String result) {
         this.result = result;
     }
 

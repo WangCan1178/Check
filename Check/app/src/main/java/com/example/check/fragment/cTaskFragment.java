@@ -163,6 +163,7 @@ public class cTaskFragment extends Fragment {
                             Task task = new Task();
                             task.setTaskid(jsonArray.getJSONObject(i).getInt("taskid"));
                             task.setTitle(jsonArray.getJSONObject(i).getString("title"));
+                            task.setGroupid(jsonArray.getJSONObject(i).getInt("groupid"));
                             tasks.add(task);
                         }
                         final Runnable runnable = new Runnable() {
@@ -175,6 +176,7 @@ public class cTaskFragment extends Fragment {
                                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                                         Intent intent =new Intent(getActivity(), com.example.check.TaskActivity.class);
                                         Bundle bundle=new Bundle();
+                                        bundle.putInt("groupid",tasks.get(i).getGroupid());
                                         bundle.putInt("taskid",tasks.get(i).getTaskid());
                                         intent.putExtras(bundle);
                                         startActivity(intent);

@@ -5,6 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="grey">#8E8E8E</color>
     <color name="darkGrey">#616161</color>
+    <color name="greyy">#F0F0F0</color>
 <!--    <color name="blue">#01AAED</color>-->
     <color name="blue"> #5080cd</color>
     <color name="white">#FFFFFF</color>
@@ -16,7 +17,7 @@
         <color name="teal_700">#FF018786</color>
         <color name="orange">#FFC107</color>
         <color name="yellow">#f5d14b</color>
-        <color name="red">#e66eb8</color>
+        <color name="red">#DC143C</color>
         <color name="green">#6bd669</color>
         <color name="Purple">#7e55fc</color>
         <color name="touming">#11512124</color>
