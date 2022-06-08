@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad705274-f5a1-4b9c-8732-5966b95b7ad0" name="Default Changelist" comment="" />
+    <list default="true" id="ad705274-f5a1-4b9c-8732-5966b95b7ad0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -49,7 +52,7 @@
       <recent name="E:\baobao\九班\学习\综合课设\check\vue-manage-system\src\components" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -64,6 +67,13 @@
       <workItem from="1653984669329" duration="4049000" />
       <workItem from="1654131711542" duration="720000" />
       <workItem from="1654140907846" duration="600000" />
+      <workItem from="1654586478006" duration="7337000" />
+      <workItem from="1654606543091" duration="1778000" />
+      <workItem from="1654586478006" duration="15982000" />
+      <workItem from="1654586478006" duration="16184000" />
+      <workItem from="1654651704161" duration="3164000" />
+      <workItem from="1654655245322" duration="1151000" />
+      <workItem from="1654651704161" duration="1349000" />
     </task>
     <servers />
   </component>
@@ -72,5 +82,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1" y="269" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1654568383947">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="1" y="269" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1654568383947" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1654567566817">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1654567566817" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1654586476972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1654586476972" />
+    <state x="15" y="222" width="642" height="534" key="find.popup" timestamp="1654655734396">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="15" y="222" width="642" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1654655734396" />
   </component>
 </project>

@@ -33,7 +33,15 @@
                     </template>
                 </el-table-column>
             </el-table>
-            <el-pagination></el-pagination>
+            <!-- todo 分页功能 -->
+            <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handlecurrentChange"
+                    :current-page="currentPage"
+                    layout="total,prev, pager, next, jumper"
+                    :total="totalCount"
+                    :hide-on-single-page="false"
+            ></el-pagination>
         </el-card>
     </div>
 </template>
@@ -53,6 +61,9 @@
                     groupid: "",
                     name : "",
                 },
+                currentPage:1,
+                totalCount:1,
+
             }
         },
         mounted(){
@@ -66,12 +77,20 @@
                 for(let i=0;i<response.data.length;i++){
                     this.manList.push(response.data[i]);
                 }
+                this.totalCount = response.data.length
             }).catch((err) => {
                 this.$message.error("出错了！");
                 console.log(err);
             })
         },
         methods:{
+            handleSizeChange(val){
+                this.pageSize = val;
+                this.currentPage = 1
+            },
+            handlecurrentChange(val){
+                this.currentPage = val
+            },
             createGroup(){
                 this.$prompt('请输入创建的群组名称','创建群组',{
                     confirmButtonText:"确定",
