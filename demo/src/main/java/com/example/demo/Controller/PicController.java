@@ -190,6 +190,17 @@ public class PicController {
     @GetMapping("/getPicD")
     public Pic getPicD(@RequestParam("id") int id) {
         Pic result = picService.getPicDetail(id);
+<<<<<<< HEAD
+        try {
+//            System.out.println("photo:::::::::"+result.getPhoto());
+            String base = encodeBase64File(result.getPhoto());
+            result.setPhoto(base);
+//            System.out.println("base::::::::::;"+result.getPhoto());
+        }catch (Exception e) {
+            System.out.println(e.toString());
+        }
+=======
+>>>>>>> 4dbc078c73d90357e0ca011f43ea8c1a8f5ba0fc
         return result;
     }
 
@@ -209,7 +220,6 @@ public class PicController {
     public Pic second(@RequestParam("userid") String userid, @RequestParam("taskid") int taskid) {
         return picService.second(userid, taskid);
     }
-
 
 }
 

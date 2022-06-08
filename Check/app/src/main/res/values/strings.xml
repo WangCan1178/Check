@@ -3,6 +3,7 @@
     <string name="my">我的</string>
     <string name="join">我加入的</string>
     <string name="create">我创建的</string>
+    <string name="message">消息</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="title">Hello blank fragment</string>

@@ -14,9 +14,15 @@
         android:orderInCategory="1"/>
 
     <item
+        android:id="@+id/navigation_message"
+        android:icon="@drawable/message3"
+        android:title="@string/message"
+        android:orderInCategory="2" />
+
+    <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/my"
         android:title="@string/my"
-        android:orderInCategory="2"/>
+        android:orderInCategory="3"/>
 
 </menu>

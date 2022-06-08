@@ -138,6 +138,7 @@
       <change afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/dist/primary.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/dist/table.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/table.json" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/table.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />

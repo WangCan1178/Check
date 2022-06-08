@@ -43,13 +43,13 @@ public class TaskApater extends ArrayAdapter<Isend> {
 //        Log.d("标题",task.getTitle());
 
 //        Log.d("hhh",Integer.toString(task.getResult()));
-        if(Integer.toString(task.getResult()).equals("0")){
+        if(task.getResult().equals("0")){
             taskresult.setTextColor(0xffff0000);
             taskresult.setText("未通过");
-        }else if(Integer.toString(task.getResult()).equals("1")){
+        }else if(task.getResult().equals("1")){
             taskresult.setTextColor(0xff339900);
             taskresult.setText("已通过");
-        }else if(Integer.toString(task.getResult()).equals("2")){
+        }else if(task.getResult().equals("2")){
             taskresult.setTextColor(0xff0033ff);
             taskresult.setText("未填写");
         }else {

@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.check.R;
+import com.example.check.fragment.MessageFragment;
 import com.example.check.fragment.joinFragment;
 import com.example.check.fragment.createFragment;
 import com.example.check.fragment.myFragment;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements
 //    createActivity createActivity = new createActivity();
     createFragment  createFragments = new createFragment();
     myFragment myFragments =new myFragment();
+    MessageFragment messageFragments = new MessageFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements
                     case 1:
                         return  createFragments;
                     case 2:
+                        return messageFragments;
+                    case 3:
                         return  myFragments;
                 }
 
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements
 
             @Override
             public int getCount() {
-                return 3;
+                return 4;
             }
         });
     }
