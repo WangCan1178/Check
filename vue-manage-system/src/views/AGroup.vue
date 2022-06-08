@@ -217,6 +217,7 @@
                 this.editTaskVisible = true
             },
             handleChange(file){
+                this.fileLists = []
                 this.fileLists.push(file)
             },
             handleRemove() {

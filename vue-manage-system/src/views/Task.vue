@@ -24,10 +24,10 @@
                     <template #header>
                         <div class="clearfix">
                             <span style="font-size: 18px">统计结果</span>
-                            <el-button style="float: right; padding: 3px 0" type="text" @click="">导出图表</el-button>
+                            <el-button style="float: right; padding: 3px 0" type="text" @click="picturee()">导出图表</el-button>
                         </div>
                     </template>
-                    <schart class="schart" canvasId="pie" :options="options3"></schart>
+                    <schart class="schart" canvasId="pie" :options="options3" id="picture"></schart>
                 </el-card>
             </el-col>
             <el-col :span="16">
@@ -35,8 +35,8 @@
                     <template #header>
                         <div class="clearfix">
                             <span style="font-size: 18px">完成情况</span>
-                            <el-button style="float: right; padding: 3px 0" type="text" @click="notice()">通知未完成成员</el-button>
-                            <el-button style="float: right; padding: 3px 0;margin-right: 15px" type="text" @click="">导出excel</el-button>
+                            <el-button style="float: right; padding: 3px 0" type="text" @click="notice()" v-show="noticable">通知未完成成员</el-button>
+                            <el-button style="float: right; padding: 3px 0;margin-right: 15px" type="text" @click="excel()">导出excel</el-button>
                         </div>
                     </template>
                     <el-table :show-header="false" :data="memberList" style="width: 100%">
@@ -103,6 +103,8 @@
     import router from "../router";
     import {ElMessage} from "element-plus";
     import {compareTime} from "./compareTime";
+    import table2excel from "js-table2excel"
+    import html2canvas from "html2canvas"
 
     export default {
         name: "Task",
@@ -152,6 +154,7 @@
                     isPass: false,
                 },
                 edit1:false,
+                noticable:true,
             }
         },
         mounted(){
@@ -172,10 +175,12 @@
                     this.task.endtime = response.data.endtime;
                     //与当前时间对比修改isFinish
                     if(compareTime(response.data.endtime)){
-                        this.task.isFinish = false
+                        this.task.isFinish = false;
+                        this.noticable = true;
                     }
                     else {
-                        this.task.isFinish = true
+                        this.task.isFinish = true;
+                        this.noticable = false;
                     }
                 }
             }).catch((err) => {
@@ -318,7 +323,19 @@
                 });
             },
             notice(){
-            //TODO 通知函数
+                //通知函数
+                this.$axios.get(
+                    "http://localhost:9000/sendMess", {
+                        params:{
+                            tid:this.route.params.id,
+                        }
+                    }
+                ).then((response) => {
+                    this.$message.success("成功提醒！");
+                }).catch((err) => {
+                    this.$message.error("出错了！");
+                    console.log(err);
+                });
             },
             FormatTime(time){
                 var now=new Date(time);
@@ -354,7 +371,76 @@
                     });
                 }).catch(() => {
                 });
-            }
+            },
+            excel(){
+                const column = [
+                    {
+                        title:"用户id",
+                        key:"userid",
+                        type:"text"
+                    },
+                    {
+                        title:"用户昵称",
+                        key:"memname",
+                        type:"text"
+                    },
+                    {
+                        title:"上传图片",
+                        key:"photo",
+                        type:"image",
+                    },
+                    {
+                        title:"识别结果",
+                        key:"result",
+                        type:"text"
+                    }
+                ];
+                this.$axios.get(
+                    "http://localhost:9000/task/getExcel", {
+                        params:{
+                            taskid:this.route.params.id,
+                        }
+                    }
+                ).then((response) => {
+                    var datas = []
+                    for (let i=0;i<response.data.length;i++){
+                        let row = {
+                            userid:"",
+                            memname:"",
+                            photo:"",
+                            result:""
+                        };
+                        row.userid = response.data[i].userid;
+                        row.memname = response.data[i].memname;
+                        row.photo = response.data[i].photo;
+                        if (response.data[i].result === "2"){
+                            row.result = "未填写";
+                        }else if(response.data[i].result === "1"){
+                            row.result = "已通过";
+                        }else {
+                            row.result = "未通过";
+                        }
+                        datas.push(row);
+                    }
+                    const excelname = this.task.taskname;
+                    table2excel(column,datas,excelname);
+                }).catch((err) => {
+                    this.$message.error("出错了！");
+                    console.log(err);
+                });
+            },
+            picturee(){
+                let htmlDom = document.getElementById("picture");
+                html2canvas(htmlDom).then(res=>{
+                    var data = res.toDataURL("image/jpeg",1.0)
+                    var a = document.createElement("a")
+                    a.href = data;
+                    a.download = this.task.taskname;
+                    a.click();
+                }).catch((errr)=>{
+                    console.log(errr)
+                })
+            },
         }
     }
 

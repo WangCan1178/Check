@@ -1,5 +1,6 @@
 package com.example.demo.Dao;
 
+import com.example.demo.Entity.Excel;
 import com.example.demo.Entity.Isend;
 import com.example.demo.Entity.Task;
 import org.apache.ibatis.annotations.*;
@@ -42,4 +43,7 @@ public interface TaskDao {
 
     @Select("call picinsert(#{groupid}, #{taskid})")
     public void excproc(int taskid, int groupid);
+
+    @Select("select * from getpic where taskid=#{taskid}")
+    public List<Excel> getExcel(int taskid);
 }
