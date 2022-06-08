@@ -5,7 +5,7 @@
             <i v-if="!collapse" class="el-icon-s-fold"></i>
             <i v-else class="el-icon-s-unfold"></i>
         </div>
-        <img src="public/icon.ico" style="height: 40px;width: 40px;float: left;margin-top: 15px">
+        <img src="/icon.ico" style="height: 40px;width: 40px;float: left;margin-top: 15px">
         <div class="logo">check查客</div>
         <div class="header-right">
             <div class="header-user-con">
@@ -55,10 +55,8 @@
 <!--    </el-dialog>-->
 </template>
 <script>
-import { computed, onMounted,reactive,ref } from "vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-//import themePicker from "./ThemePicker.vue";
 
 export default {
     inject:['reload'],

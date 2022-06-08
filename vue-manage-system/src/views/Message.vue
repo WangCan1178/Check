@@ -216,23 +216,23 @@ export default {
             });
         },
         handleReadAll(){
-            for(let i=0;i<this.state.unread.length;i++){
-                this.handleRead(i);
+            while(this.state.unread.length>0) {
+                this.handleRead();
             }
         },
         handleDelAll(){
-            for (let i=0;i<this.state.read.length;i++){
-                this.handleDel(i);
+            while(this.state.read.length>0){
+                this.handleDel();
             }
         },
         handleUnreadAll(){
-            for (let i=0;i<this.state.read.length;i++){
-                this.handleUnread(i);
+            while(this.state.read.length>0){
+                this.handleUnread();
             }
         },
         handleRestoreAll(){
-            for (let i=0;i<this.state.recycle.length;i++){
-                this.deleteMes(i);
+            while(this.state.recycle.length>0){
+                this.deleteMes();
             }
         }
     },

@@ -61,7 +61,8 @@
             android:layout_marginTop="80dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:divider="@drawable/line">
         </ListView>
     </LinearLayout>
 </FrameLayout>

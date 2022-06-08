@@ -18,7 +18,6 @@ import com.example.check.Adapter.TaskApater;
 import com.example.check.R;
 import com.example.check.fragment.jGroupFragment;
 import com.example.check.fragment.jTaskFragment;
-import com.example.check.fragment.jMessageFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
@@ -29,7 +28,7 @@ public class joinActivity extends AppCompatActivity implements
     ViewPager viewPager;
     BottomNavigationView mNavigationView;
     jTaskFragment jTaskFragments = new jTaskFragment();
-    jMessageFragment jMessageFragments = new jMessageFragment();
+//    jMessageFragment jMessageFragments = new jMessageFragment();
     com.example.check.fragment.jGroupFragment jGroupFragment = new jGroupFragment();
     private ImageView but_joingroup;
 

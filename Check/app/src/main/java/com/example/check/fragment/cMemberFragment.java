@@ -152,7 +152,7 @@ public class cMemberFragment extends Fragment {
                             member.setMemname(jsonArray.getJSONObject(i).getString("memname"));
                             members.add(member);
                         }
-                        System.out.println(members);
+//                        System.out.println(members);
                         final Runnable runnable = new Runnable() {
                             @Override
                             public void run() {

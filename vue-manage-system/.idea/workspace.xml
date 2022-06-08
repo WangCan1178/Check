@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad705274-f5a1-4b9c-8732-5966b95b7ad0" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/../Check/app/src/main/java/com/example/check/register/Contact.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Check/app/src/main/res/drawable-v24/verify.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Check/app/src/main/res/layout/activity_contact.xml" afterDir="false" />
@@ -26,12 +27,176 @@
       <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/ipad下载账号.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/refresh.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/未标题-1.jpg" beforeDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/@intlify.c1f614fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/@popperjs.59bfb2c1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/@vue.c261c184.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/AGroup.343a064e.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/AGroup.5b4689cc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Dashboard.6eaa2841.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Dashboard.a0507e06.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Dashboard.b062fcca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Forget.0a8d5645.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Forget.3f6cfd6b.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Login.7b3a8ca1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Login.7f977108.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Login.8dc96dbe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/MGroup.019bb5ac.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/MGroup.34de5843.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Message.0e1db7dd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Message.46882b55.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Next.3fec29d3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Next.40de2305.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/QQ图片20220607153231.c39f37b6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Register.6282964b.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Register.99f1af5a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Task.31cb9ca4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Task.6db20f16.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Task.e2bcae1a.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/User.c8e08d4c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/User.d4717c21.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/User.d5d91e80.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/_html2canvas@1.4.1@html2canvas.0b7b60f5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/addGroup.8f35fac6.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/addGroup.c7833929.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/addGroup.ea8535c4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/async-validator.3a3a8ce1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/axios.df2521e5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/call-bind.d7be007a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/cropperjs.9960b491.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/cropperjs.f08632a2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/dayjs.1c7a45b9.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/element-plus.0f47985d.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/element-plus.d6772035.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/forgetnext.013242a2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/forgetnext.1f217b45.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/function-bind.3516d9d0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/get-intrinsic.6937319b.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/has-symbols.66aa3060.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/has.e5e9094d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/index.34a4bca5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/index.41a26f72.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/index.7b400e89.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/js-table2excel.4d00d137.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/lodash.c042e748.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/manageGroup.60c29241.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/mitt.20cc8481.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/normalize-wheel.86fce3c7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/object-inspect.00dd8995.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/qs.dd4863fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/resize-observer-polyfill.96acbc9d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/schart.js.36bd0dd2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/side-channel.ae62d9bb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/vue-cropperjs.b71e6c1f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/vue-i18n.298c823a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/vue-router.f985018f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/vue-schart.5f39d935.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/vue.0d6c7bea.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/vuex.51c69487.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/day.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/primary.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/@intlify.c1f614fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/@popperjs.59bfb2c1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/@vue.c261c184.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/AGroup.343a064e.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/AGroup.5b4689cc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Dashboard.6eaa2841.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Dashboard.a0507e06.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Forget.0a8d5645.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Forget.3f6e2a12.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Login.7b3a8ca1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Login.7f977108.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/MGroup.019bb5ac.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/MGroup.34de5843.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Message.0e1db7dd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Message.874c9530.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Next.20afadeb.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Next.40de2305.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/QQ图片20220607153231.c39f37b6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Register.99f1af5a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Register.bffe174f.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Task.6db20f16.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Task.e2bcae1a.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/User.c8e08d4c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/User.d5d91e80.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/_html2canvas@1.4.1@html2canvas.0b7b60f5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/addGroup.8f35fac6.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/addGroup.ea8535c4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/async-validator.3a3a8ce1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/axios.df2521e5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/call-bind.d7be007a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/cropperjs.9960b491.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/cropperjs.f08632a2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/dayjs.1c7a45b9.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/element-icons.9c88a535.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/element-icons.de5eb258.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/element-plus.0f47985d.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/element-plus.d6772035.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/forgetnext.1f217b45.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/forgetnext.74097cd4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/function-bind.3516d9d0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/get-intrinsic.6937319b.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/has-symbols.66aa3060.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/has.e5e9094d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/img.cf1cb86c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/index.34a4bca5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/index.41a26f72.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/js-table2excel.4d00d137.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/lodash.c042e748.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/manageGroup.60c29241.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/manageGroup.ae0102fd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/mitt.20cc8481.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/normalize-wheel.86fce3c7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/object-inspect.00dd8995.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/qs.dd4863fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/resize-observer-polyfill.96acbc9d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/schart.js.36bd0dd2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/side-channel.ae62d9bb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/vue-cropperjs.b71e6c1f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/vue-i18n.298c823a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/vue-router.f985018f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/vue-schart.5f39d935.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/vue.0d6c7bea.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/vuex.51c69487.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/day.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/icon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/primary.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/table.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/table.json" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/table.json" afterDir="false" />
+>>>>>>> 8501a8f945aa4b4d09afb83ce2ddc8a098e714ee
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/html2canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/html2canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/html2canvas.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/html2canvas.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ElementUiCSS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/AGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AGroup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Message.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -57,6 +222,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -75,7 +241,24 @@
       <recent name="E:\baobao\九班\学习\综合课设\check\vue-manage-system\src\components" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="false" />
+  <component name="RunManager">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="应用程序级" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -97,16 +280,38 @@
       <workItem from="1654651704161" duration="3164000" />
       <workItem from="1654655245322" duration="1151000" />
       <workItem from="1654651704161" duration="1349000" />
+      <workItem from="1654658829551" duration="243000" />
+      <workItem from="1654674927013" duration="3059000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1654675251578">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1654675251578" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1654677478918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1654677478918" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1654677478918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1654677478918" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1654677478918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1654677478918" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1654677478918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1654677478918" />
     <state x="1" y="269" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1654568383947">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -115,13 +320,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1654567566817" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1654586476972">
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1654674926462">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1654586476972" />
-    <state x="15" y="222" width="642" height="534" key="find.popup" timestamp="1654655734396">
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1654674926462" />
+    <state x="307" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1654677416015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="15" y="222" width="642" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1654655734396" />
+    <state x="307" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1654677416015" />
+    <state x="15" y="222" width="642" height="534" key="find.popup" timestamp="1654675883135">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="15" y="222" width="642" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1654675883135" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1654675853113">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1654675853113" />
   </component>
 </project>

@@ -45,7 +45,7 @@ public class PicController {
         inputFile.close();
         return new BASE64Encoder().encode(buffer);
     }
-// 很抱歉在使用的过程中给您带来的不好体验，诚挚邀请您提出有关app使用的意见或建议，我们会及时修复！发布者QQ：1178272817，微信“13145318073。另外，此项目已在github进行开源，如果您感兴趣，访问：。
+
     public String check(String type, String file) {
         // 1特征，2文字
         //        String path = "./src/main/resources/static/check.py";
@@ -125,7 +125,7 @@ public class PicController {
     @PostMapping("/add")
     public String add(@RequestParam("userid") String userid, @RequestParam("taskid") String
             taskid, @RequestParam("type") String type, @RequestParam("file") MultipartFile file) {
-        System.out.println("YESYES!" + userid + "     taskid:" + taskid + "     type:" + type);
+//        System.out.println("YESYES!" + userid + "     taskid:" + taskid + "     type:" + type);
         if (file.isEmpty()) {
             return "文件为空";
         }
@@ -190,6 +190,12 @@ public class PicController {
     @GetMapping("/getPicD")
     public Pic getPicD(@RequestParam("id") int id) {
         Pic result = picService.getPicDetail(id);
+        try {
+            String base = encodeBase64File(result.getPhoto());
+            result.setPhoto(base);
+        }catch (Exception e) {
+            System.out.println(e.toString());
+        }
         return result;
     }
 

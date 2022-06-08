@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.mob.sdk'
 
 android {
-//    targetSdkVersion 28
     compileSdkVersion 32
     buildToolsVersion "32.0.0"
     defaultConfig {

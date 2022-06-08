@@ -42,10 +42,10 @@
 
         <el-dialog :title="task.title" v-model="editTaskVisible">
             <div v-show="second">
-                <img :src="photo.pUrl" style="width: 100%">
+                <img :src="photofirst.pUrl" style="width: 100%">
                 <div style="font-size: 16px;margin-top: 10px">
                     识别结果：
-                    <span>{{photo.pResult}}</span>
+                    <span>{{photofirst.pResult}}</span>
                 </div>
             </div>
                 <el-form >
@@ -130,6 +130,11 @@
                 edit2:false,
                 fileLists:[],
                 photo:{
+                    pUrl:"",
+                    pResult:"",
+                    pid:""
+                },
+                photofirst:{
                     pUrl:"",
                     pResult:"",
                     pid:""
@@ -234,15 +239,15 @@
                             this.second = false;
                             return
                         }else if (response.data.result === "1"){
-                            this.photo.pResult = "已通过";
+                            this.photofirst.pResult = "已通过";
                             this.second = true
                         } else{
-                            this.photo.pResult = "未通过";
+                            this.photofirst.pResult = "未通过";
                             this.second = true
                         }
-                        this.photo.pid = response.data.picid;
+                        this.photofirst.pid = response.data.picid;
                         let arr = response.data.photo.split("\\")
-                        this.photo.pUrl = "http://localhost:9000/pics/" + arr[arr.length-1]
+                        this.photofirst.pUrl = "http://localhost:9000/pics/" + arr[arr.length-1]
                     }).catch((err) => {
                         this.$message.error("出错了！");
                         console.log(err);

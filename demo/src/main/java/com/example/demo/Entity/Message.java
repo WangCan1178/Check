@@ -13,20 +13,37 @@ public class Message {
     int isread;
     int groupid;
     String title;
+    int taskid;
+
 
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd hh:mm:ss")
     Date time;
 
+
+
     @Override
     public String toString() {
         return "Message{" +
-                "userid='" + userid + '\'' +
+                "mesid=" + mesid +
+                ", userid='" + userid + '\'' +
                 ", isread=" + isread +
                 ", groupid=" + groupid +
+                ", title='" + title + '\'' +
+                ", taskid=" + taskid +
                 ", time=" + time +
                 '}';
     }
+
+
+    public int getTaskid() {
+        return taskid;
+    }
+
+    public void setTaskid(int taskid) {
+        this.taskid = taskid;
+    }
+
 
     public int getMesid() {
         return mesid;

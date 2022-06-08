@@ -6,7 +6,7 @@ public class Isend {
     int groupid;
     String userid;
     int ifend;
-    int result;
+    String result;
     int picid;
     String memname;
 
@@ -41,15 +41,13 @@ public class Isend {
     }
 
 
-    public int getResult() {
+    public String getResult() {
         return result;
     }
 
-    public void setResult(int result) {
+    public void setResult(String result) {
         this.result = result;
     }
-
-
 
     public int getTaskid() {
         return taskid;

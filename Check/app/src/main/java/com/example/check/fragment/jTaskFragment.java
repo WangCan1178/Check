@@ -111,7 +111,7 @@ private int id;
 
         Bundle bundle = getArguments();
         id = bundle.getInt("groupid");
-        Toast.makeText(getActivity(),"group"+id,Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(),"group"+id,Toast.LENGTH_SHORT).show();
         but_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,7 +168,7 @@ private int id;
                             task.setTaskid(jsonArray.getJSONObject(i).getInt("taskid"));
                             task.setTitle(jsonArray.getJSONObject(i).getString("title"));
 //                            task.setIfend(jsonArray.getJSONObject(i).getInt("ifend"));
-                            task.setResult(jsonArray.getJSONObject(i).getInt("result"));
+                            task.setResult(jsonArray.getJSONObject(i).getString("result"));
                             task.setIfend(jsonArray.getJSONObject(i).getInt("ifend"));
                             task.setGroupid(jsonArray.getJSONObject(i).getInt("groupid"));
 //                            if ((jsonArray.getJSONObject(i).getInt("ifenf"))==0){
