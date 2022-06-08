@@ -36,5 +36,7 @@ public interface PicDao {
     @Select("select count(*) from picture where userid=#{userid} and result=2")
     public int getUserTask(String userid);
 
+    @Select("select * from picture where userid=#{userid} and taskid=#{taskid}")
+    public Pic second(String userid,int taskid);
 
 }

@@ -41,8 +41,15 @@
         </el-card>
 
         <el-dialog :title="task.title" v-model="editTaskVisible">
+            <div v-show="second">
+                <img :src="photo.pUrl" style="width: 100%">
+                <div style="font-size: 16px;margin-top: 10px">
+                    识别结果：
+                    <span>{{photo.pResult}}</span>
+                </div>
+            </div>
                 <el-form >
-                    <!--TODO 修改链接 略缩图-->
+                    <!--修改链接 略缩图-->
                     <!--https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/ -->
                     <el-upload class="upload-demo" drag  multiple
                                accept="image/png,image/jpg,image/jpeg"
@@ -130,6 +137,12 @@
                 Visible:false,
                 currentPage:1,
                 totalCount:1,
+                second:false,
+                photo:{
+                    pUrl:"",
+                    pResult:"",
+                    pid:""
+                },
             }
         },
         mounted(){
@@ -196,7 +209,7 @@
             write(index,row){
                 let idx = -1;
                 //获取任务信息
-                //TODO 有没有提交过的任务可能先查询图片进行一个显示
+                //提交过的任务可能先查询图片进行一个显示
                 idx = index;
                 Object.keys(this.task).forEach( (item) =>{
                     this.task[item] = row[item];
@@ -209,6 +222,31 @@
                     }
                 ).then((response) => {
                     this.task.description = response.data.description
+                    this.$axios.get(
+                        "http://localhost:9000/pic/second",{
+                            params:{
+                                userid:localStorage.getItem("userId"),
+                                taskid:this.task.id,
+                            }
+                        }
+                    ).then((response) => {
+                        if (response.data.result === "2"){
+                            this.second = false;
+                            return
+                        }else if (response.data.result === "1"){
+                            this.photo.pResult = "已通过";
+                            this.second = true
+                        } else{
+                            this.photo.pResult = "未通过";
+                            this.second = true
+                        }
+                        this.photo.pid = response.data.picid;
+                        let arr = response.data.photo.split("\\")
+                        this.photo.pUrl = "http://localhost:9000/pics/" + arr[arr.length-1]
+                    }).catch((err) => {
+                        this.$message.error("出错了！");
+                        console.log(err);
+                    });
                 }).catch((err) => {
                     this.$message.error("出错了！");
                     console.log(err);

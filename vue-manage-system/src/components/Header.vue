@@ -32,7 +32,7 @@
                     <template #dropdown>
                         <el-dropdown-menu>
                             <el-dropdown-item command="user">个人中心</el-dropdown-item>
-                            <el-dropdown-item divided command="changestyle">切换主题</el-dropdown-item>
+<!--                            <el-dropdown-item divided command="changestyle">切换主题</el-dropdown-item>-->
                             <el-dropdown-item divided command="loginout">退出登录</el-dropdown-item>
                             <el-dropdown-item divided command="deleteUser">注销账号</el-dropdown-item>
                         </el-dropdown-menu>
