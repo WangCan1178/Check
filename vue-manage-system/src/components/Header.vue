@@ -61,63 +61,67 @@ import { useRouter } from "vue-router";
 //import themePicker from "./ThemePicker.vue";
 
 export default {
-
+    inject:['reload'],
     // components:{
     //     themePicker
     // },
-    setup() {
-
-
-        const username = localStorage.getItem("ms_username");
-        const message = 2;
-
-        const store = useStore();
-        const collapse = computed(() => store.state.collapse);
-        // 侧边栏折叠
-        const collapseChage = () => {
-            store.commit("handleCollapse", !collapse.value);
-        };
-
-        onMounted(() => {
-            if (document.body.clientWidth < 1500) {
-                collapseChage();
-            }
-        });
-
-        // const styleVisible = ref(false);
-        // const color = ref('');
-        // color.value="#409EFF"
-        // const alter = ()=>{
-        //     updateThemeColor(color.value)
-        // }
-
-        // 用户名下拉菜单选择事件
-        const router = useRouter();
-        const handleCommand = (command) => {
+    data(){
+        return{
+            message:0,
+            username:localStorage.getItem("ms_username"),
+            store:useStore(),
+            router:useRouter(),
+            collapse:true
+        }
+    },
+    methods:{
+        collapseChage(){
+            // 侧边栏折叠
+            this.store.commit("handleCollapse", !this.collapse);
+        },
+        handleCommand(command){
             if (command == "loginout") {
                 localStorage.removeItem("ms_username");
-                router.push("/login");
+                this.router.push("/login");
             } else if (command == "user") {
-                router.push("/user");
+                this.router.push("/user");
             }else if (command == "deleteUser"){
                 //TODO 删除账号
                 localStorage.removeItem("ms_username");
-                router.push("/login");}
-            // }else if (command == "changestyle"){
-            //     styleVisible.value = true
-            // }
-
-        };
-
-        return {
-            username,
-            message,
-            collapse,
-
-            collapseChage,
-            handleCommand,
-
-        };
+                this.router.push("/login");}
+        },
+    },
+    mounted(){
+        if (document.body.clientWidth < 1500) {
+            this.collapseChage();
+        }
+        this.$axios.get(
+            "http://localhost:9000/getMess",{
+                params:{
+                    userid:localStorage.getItem("userId")
+                }
+            }
+        ).then((response) => {
+            if (response.data !== null){
+                for (let i=0;i<response.data.length;i++){
+                    if (response.data[i].isread === 0){
+                        this.message = this.message+1
+                    }
+                }
+                console.log(this.message)
+            }
+        }).catch((err) => {
+            this.$message.error("出错了！");
+            console.log(err);
+        });
+    },
+    computed:{
+        collapse(){this.collapse = this.store.state.collapse}
+    },
+    watch:{
+        '$route'(){
+            this.reload()
+        }
     },
 };
 </script>
