@@ -94,23 +94,24 @@ public class PicController {
                 // 返回的resp是一个RecognizeTravelCardOCRResponse的实例，与请求对象对应
                 RecognizeTravelCardOCRResponse resp = client.RecognizeTravelCardOCR(req);
                 // 输出json格式的字符串回包
-                if (resp.getRiskArea().length==0) {
+                if (resp.getRiskArea().length == 0) {
                     return "1";
                 }
 //                System.out.println(RecognizeTravelCardOCRResponse.toJsonString(resp));
-            }else {
+            } else {
                 GeneralFastOCRRequest req = new GeneralFastOCRRequest();
                 req.setImageBase64(base64);
                 // 返回的resp是一个GeneralFastOCRResponse的实例，与请求对象对应
                 GeneralFastOCRResponse resp = client.GeneralFastOCR(req);
                 // 输出json格式的字符串回包
-                for (TextDetection i:resp.getTextDetections()){
-                if (i.getDetectedText().contains(type)) {
+                for (TextDetection i : resp.getTextDetections()) {
+                    if (i.getDetectedText().contains(type)) {
 //                    System.out.println(i.toString());
-                    return "1";
-                }
+                        return "1";
+                    }
 
-            }}
+                }
+            }
 
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -201,13 +202,14 @@ public class PicController {
         } else {
             return "failed";
         }
-
-        @ResponseBody
-        @GetMapping("/second")
-        public Pic second (@RequestParam("userid") String userid,@RequestParam("taskid") int taskid){
-            return picService.second(userid,taskid);
-        }
-
-
     }
+
+    @ResponseBody
+    @GetMapping("/second")
+    public Pic second(@RequestParam("userid") String userid, @RequestParam("taskid") int taskid) {
+        return picService.second(userid, taskid);
+    }
+
+
 }
+
