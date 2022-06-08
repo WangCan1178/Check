@@ -2,8 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad705274-f5a1-4b9c-8732-5966b95b7ad0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Entity/Excel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/ipad下载账号.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.~README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Check/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Check/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Dao/PicDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Dao/PicDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Service/PicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Service/PicService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/check.py" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/check.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/axios.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/axios.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/chunk-A5ICIBVI.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/chunk-A5ICIBVI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/chunk-A5ICIBVI.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/chunk-A5ICIBVI.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/chunk-C65A56LU.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/chunk-C65A56LU.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/chunk-C65A56LU.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/chunk-C65A56LU.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/chunk-ETF3SVWX.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/chunk-ETF3SVWX.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/chunk-ETF3SVWX.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/chunk-ETF3SVWX.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/element-plus.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/element-plus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/element-plus.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/element-plus.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/element-plus_lib_locale_lang_en.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/element-plus_lib_locale_lang_en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/element-plus_lib_locale_lang_en.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/element-plus_lib_locale_lang_en.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/element-plus_lib_locale_lang_zh-cn.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/element-plus_lib_locale_lang_zh-cn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/element-plus_lib_locale_lang_zh-cn.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/element-plus_lib_locale_lang_zh-cn.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/lodash.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/lodash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/lodash.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/lodash.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/qs.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/qs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/qs.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/qs.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/schart_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/schart_js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/schart_js.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/schart_js.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/vue-cropperjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/vue-cropperjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/vue-cropperjs.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/vue-cropperjs.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/vue-i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/vue-i18n.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/vue-i18n.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/vue-i18n.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/vue-router.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/vue-router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/vue-router.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/vue-router.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/vue.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/vue.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/vuex.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/vuex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.vite/vuex.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/vuex.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/AGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AGroup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Task.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Task.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +78,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -67,14 +109,18 @@
       <workItem from="1653984669329" duration="4049000" />
       <workItem from="1654131711542" duration="720000" />
       <workItem from="1654140907846" duration="600000" />
+      <workItem from="1654586478006" duration="7337000" />
+      <workItem from="1654606543091" duration="1778000" />
+      <workItem from="1654586478006" duration="15982000" />
       <workItem from="1654586478006" duration="16184000" />
       <workItem from="1654651704161" duration="3164000" />
       <workItem from="1654655245322" duration="1151000" />
+      <workItem from="1654651704161" duration="1349000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
