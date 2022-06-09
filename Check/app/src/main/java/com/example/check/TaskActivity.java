@@ -99,17 +99,13 @@ public class TaskActivity extends Activity {
         but_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                StringBuilder stringBuilder = new StringBuilder("http://10.0.2.2:9000/sendMess");
+                stringBuilder.append("?");
+                stringBuilder.append("tid").append("=").append(taskid);
                 OkHttpClient client = new OkHttpClient();
-                JSONObject jsonObject = new JSONObject();
-                try {
-                    jsonObject.put("tid",taskid);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=UTF-8"),String.valueOf(jsonObject));
                 final Request request = new Request.Builder()
-                        .url("http://10.0.2.2:9000/sendMess")
-                        .post(requestBody)
+                        .url(stringBuilder.toString())
+                        .get()
                         .build();
                 Call call = client.newCall(request);
                 call.enqueue(new Callback() {
@@ -120,7 +116,8 @@ public class TaskActivity extends Activity {
 
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
-//                        String result = response.body().string();
+                        String result = response.body().string();
+//                        if (result.equals("1")) {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -130,6 +127,7 @@ public class TaskActivity extends Activity {
                                 toast1.show();
                             }
                         });
+//                        }
                     }
                 });
             }
@@ -213,7 +211,6 @@ public class TaskActivity extends Activity {
                         e.printStackTrace();
                     }
                 }
-                System.out.println("里面："+all);
             }
 
         });
@@ -224,10 +221,10 @@ public class TaskActivity extends Activity {
                 e.printStackTrace();
             }
         }
-        System.out.println("all:"+all);
-        System.out.println("unfinish:"+unfinish);
-        System.out.println("unpass:"+unpass);
-        System.out.println("pass:"+pass);
+//        System.out.println("all:"+all);
+//        System.out.println("unfinish:"+unfinish);
+//        System.out.println("unpass:"+unpass);
+//        System.out.println("pass:"+pass);
         id_tv_1 = findViewById(R.id.id_tv_1);
         id_tv_2 = findViewById(R.id.id_tv_2);
         id_tv_3 = findViewById(R.id.id_tv_3);
@@ -239,7 +236,7 @@ public class TaskActivity extends Activity {
 //      System.out.println("p1::"+(float)pass/(float)all);
 //      System.out.println("p2::"+unpass/all);
 //      System.out.println("p3::"+unfinish/all);
-        System.out.println("p1:"+p1+"    p2:"+p2+"   p3:"+p3);
+//        System.out.println("p1:"+p1+"    p2:"+p2+"   p3:"+p3);
         ColorRandom colorRandom = new ColorRandom(3);
         for (int i = 0; i < 3; i++) {
             int colors = (int) colorRandom.getColors().get(i);

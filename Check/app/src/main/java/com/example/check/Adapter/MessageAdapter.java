@@ -122,17 +122,14 @@ public class MessageAdapter extends ArrayAdapter<Message> {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
+                message.setIsread(1);
+                StringBuilder stringBuilder = new StringBuilder(baseURL+"/deleteMes");
+                stringBuilder.append("?");
+                stringBuilder.append("mesid").append("=").append(message.getMesid());
                 OkHttpClient client = new OkHttpClient();
-                JSONObject jsonObject = new JSONObject();
-                try {
-                    jsonObject.put("mesid",message.getMesid());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=UTF-8"),String.valueOf(jsonObject));
                 final Request request = new Request.Builder()
-                        .url(baseURL+"/deleteMes")
-                        .post(requestBody)
+                        .url(stringBuilder.toString())
+                        .get()
                         .build();
                 Call call = client.newCall(request);
                 call.enqueue(new Callback() {
@@ -144,20 +141,19 @@ public class MessageAdapter extends ArrayAdapter<Message> {
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
                         String result = response.body().string();
-                        if(result.equals("success")){
-                            ((Activity)getContext()).runOnUiThread(new Runnable() {
+                        if (result.equals("1")) {
+                            ((Activity) getContext()).runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     DynamicToast toast = new DynamicToast();
-                                    Toast toast1 = toast.makeSuccess(view.getContext(),"删除成功");
-                                    toast1.setGravity(Gravity.TOP,0,50);
+                                    Toast toast1 = toast.makeSuccess(view.getContext(), "消息删除成功");
+                                    toast1.setGravity(Gravity.TOP, 0, 50);
                                     toast1.show();
-                                    Intent intent = new Intent(view.getContext(), MainActivity.class);
-//                                    intent.putExtra("groupid",member.getGroupid());
-                                    ((Activity)getContext()).startActivity(intent);
                                 }
                             });
                         }
+                        Intent intent = new Intent(view.getContext(), MainActivity.class);
+                        ((Activity) getContext()).startActivity(intent);
                     }
                 });
             }

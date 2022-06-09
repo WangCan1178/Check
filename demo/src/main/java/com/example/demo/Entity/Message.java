@@ -34,7 +34,6 @@ public class Message {
                 ", time=" + time +
                 '}';
     }
-    
     public int getTaskid() {
         return taskid;
     }

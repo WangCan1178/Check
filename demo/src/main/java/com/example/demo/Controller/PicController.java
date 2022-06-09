@@ -18,7 +18,7 @@ import com.tencentcloudapi.common.exception.TencentCloudSDKException;
 import com.tencentcloudapi.ocr.v20181119.OcrClient;
 import com.tencentcloudapi.ocr.v20181119.models.*;
 import sun.misc.BASE64Encoder;
-
+//
 @Controller
 @CrossOrigin
 @RequestMapping("/pic")
@@ -125,7 +125,7 @@ public class PicController {
     @PostMapping("/add")
     public String add(@RequestParam("userid") String userid, @RequestParam("taskid") String
             taskid, @RequestParam("type") String type, @RequestParam("file") MultipartFile file) {
-        System.out.println("YESYES!" + userid + "     taskid:" + taskid + "     type:" + type);
+//        System.out.println("YESYES!" + userid + "     taskid:" + taskid + "     type:" + type);
         if (file.isEmpty()) {
             return "文件为空";
         }
@@ -190,12 +190,9 @@ public class PicController {
     @GetMapping("/getPicD")
     public Pic getPicD(@RequestParam("id") int id) {
         Pic result = picService.getPicDetail(id);
-
         try {
-//            System.out.println("photo:::::::::"+result.getPhoto());
             String base = encodeBase64File(result.getPhoto());
             result.setPhoto(base);
-//            System.out.println("base::::::::::;"+result.getPhoto());
         }catch (Exception e) {
             System.out.println(e.toString());
         }

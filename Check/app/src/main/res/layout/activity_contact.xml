@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register.Contact">
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="20dp"
+      android:layout_marginTop="50dp"
+      android:layout_marginRight="20dp"
+      android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="\n很抱歉在使用的过程中给您带来的不好体验，诚挚邀请您提出有关app使用的意见或建议，我们会及时修复！\n\n客服QQ：1178272817，微信13145318073。\n\n 另外，此项目已在github进行开源，如果您感兴趣，访问：https://github.com/W-caner/Check。"
+        android:textSize="30sp" />
+  </LinearLayout>
+
+</LinearLayout>

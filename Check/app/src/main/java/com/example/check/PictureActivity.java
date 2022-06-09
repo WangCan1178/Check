@@ -93,7 +93,6 @@ public class PictureActivity extends Activity {
                 }else {
                     picResult.setText("识别结果：未通过");
                 }
-                System.out.println("1234fhhhhhhh"+pictureObject.getPhoto());
                 final Runnable runnable = new Runnable() {
                     @Override
                     public void run() {
