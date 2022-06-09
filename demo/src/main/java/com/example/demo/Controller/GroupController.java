@@ -57,6 +57,7 @@ public class GroupController {
     @ResponseBody
     @PostMapping("/addGroup")
     public String addGroup(@RequestBody Member member){
+        System.out.println(member.getGroupid());
         int result = groupService.addGroup(member.getUserid(),member.getGroupid(),member.getMemname(),1);
         if (result>0){
             return "success";

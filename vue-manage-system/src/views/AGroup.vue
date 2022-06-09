@@ -3,6 +3,7 @@
         <el-card class="box-card">
             <div slot="header" class="clearfix">
                 <span class="box-title">{{ groupName }}</span>
+                <span class="text" style="margin-left: 50px">群组id：{{ groupID }}</span>
                 <el-button style="float: right;font-size: 16px;padding-right: 30px" type="text" @click="altername()">修改群内名称</el-button>
             </div>
             <el-table :show-header="false" :data="taskList" style="width: 100%" highlight-current-row>
@@ -112,6 +113,7 @@
         inject:['reload'],
         data(){
             return{
+                groupID:"",
                 resData:{
                     userId: localStorage.getItem("userid")
                 },
@@ -151,6 +153,7 @@
             }
         },
         mounted(){
+            this.groupID=this.route.params.id;
             //获取群组名字和任务列表
             this.$axios.get(
                 "http://localhost:9000/add/getName",{

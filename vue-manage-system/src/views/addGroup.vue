@@ -74,7 +74,7 @@
                 }
             ).then((response) => {
                 for(let i=0;i<response.data.length;i++){
-                    console.log(response.data[i]);
+                    //console.log(response.data[i]);
                     this.addList.push(response.data[i]);
                 }
                 this.totalCount = response.data.length
@@ -136,6 +136,8 @@
                                 message: "加入群组成功"
                             });
                             this.reload()
+                        }else {
+                            ElMessage.error("该群组不存在或已加入，请重新输入")
                         }
                     }).catch((err)=>{
                             ElMessage.error("出错了");

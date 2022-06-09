@@ -304,7 +304,7 @@
                     cancelButtonText:"取消",
                     inputPattern: /^1[3-9]\d{9}$/,
                     inputErrorMessage: "管理员id格式不正确"
-                }).then(({ value }) => {
+                }).then(({value}) => {
                     //添加管理员
                     this.$axios.post(
                         'http://localhost:9000/manage/addManager',{
@@ -318,13 +318,15 @@
                                 message: "添加管理员成功"
                             });
                             this.reload()
+                        }else {
+                            ElMessage.error("添加管理员失败，请检查管理员id")
                         }
                     }).catch((err)=>{
                         ElMessage.error("出错了");
                         console.log(err);
                     });
                 }).catch( () => {
-                    this.$message.error("添加管理员失败");
+                    // this.$message.error("添加管理员失败");
                 })
             },
             onSubmit(){

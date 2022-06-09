@@ -113,6 +113,7 @@ public class ManGroupController {
     @ResponseBody
     @PostMapping("/addManager")
     public String addManager(@RequestBody Member member){
+        System.out.println(member.getGroupid());
         String name = userService.getUserName(member.getUserid());
         int result = groupService.addGroup(member.getUserid(),member.getGroupid(),name,0);
         if (result>0){

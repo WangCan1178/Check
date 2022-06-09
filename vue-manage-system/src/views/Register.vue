@@ -24,7 +24,7 @@
                     <router-link to="/login">
                         <el-button type="info" style="margin-right: 1%">返回登录</el-button>
                     </router-link>
-                    <el-button type="primary" @click="next()" style="margin-left: 1%">下一步</el-button>
+                    <el-button type="primary" @click="next()" style="margin-left: 1%" :disabled="btn">下一步</el-button>
                 </div>
             </el-form>
         </div>
@@ -58,7 +58,8 @@
                         validator: this.code,
                         trigger: "blur",
                     }]
-                }
+                },
+                btn:true,
             }
         },
         methods:{
@@ -93,12 +94,16 @@
             telCheck(rule,value,callback){
                 var  reg = /^1[3-9]\d{9}$/;
                 if (value === ""){
-                    return callback(new Error("请输入手机密码"));
+                    this.btn = true;
+                    return callback(new Error("请输入手机号码"));
                 } else if (value.toString().length !== 11){
+                    this.btn = true;
                     return callback(new Error("手机号码必须为11位"));
                 }else if (!reg.test(value)){
+                    this.btn = true;
                     return callback(new Error("请输入有效的手机号码"));
                 }else {
+                    this.btn = false
                     callback();
                 }
             },
