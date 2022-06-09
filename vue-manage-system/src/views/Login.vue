@@ -87,7 +87,7 @@ export default {
                 })
                 .then(function (response) {
                     console.log(response.data);
-                    if(response.data === null){
+                    if(response.data.name == null){
                         ElMessage.error("用户名或密码不正确，登录失败")
                     }else{
                         ElMessage.success("登录成功");

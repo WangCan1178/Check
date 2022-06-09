@@ -54,7 +54,6 @@ public class UserController {
 //        System.out.println(id+password);
         User result = userService.login(id,password);
         if(result != null){
-
             return result;
         }else {
             return null;
