@@ -270,7 +270,7 @@
                     this.picture[item] = row[item];
                 });
                 this.$axios.get(
-                    "http://localhost:9000/pic/getPicD",{
+                    "http://localhost:9000/pic/getPicDD",{
                         params:{
                             id:this.picture.id,
                         }
@@ -286,6 +286,7 @@
                     }
                     let arr = response.data.photo.split("\\")
                     this.photo.pUrl = "http://localhost:9000/pics/" + arr[arr.length-1]
+                    console.log("task:"+this.photo.pUrl)
                     // let reader = new FileReader()
                     // reader.readAsDataURL(response.data.photo)
                     // reader.onload = ()=>{

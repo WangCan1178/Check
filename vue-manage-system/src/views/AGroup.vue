@@ -251,6 +251,7 @@
                         this.photofirst.pid = response.data.picid;
                         let arr = response.data.photo.split("\\")
                         this.photofirst.pUrl = "http://localhost:9000/pics/" + arr[arr.length-1]
+                        console.log(this.photofirst.pUrl)
                     }).catch((err) => {
                         this.$message.error("出错了！");
                         console.log(err);

@@ -3,6 +3,15 @@ package com.example.demo.Entity;
 public class Group {
     int groupid;
     String name;
+    String describe;
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
 
     public int getGroupid() {
         return groupid;
@@ -25,6 +34,7 @@ public class Group {
         return "Group{" +
                 "groupid=" + groupid +
                 ", name='" + name + '\'' +
+                ", describe='" + describe + '\'' +
                 '}';
     }
 }

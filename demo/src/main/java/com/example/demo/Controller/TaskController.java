@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 //import java.sql.Date;
 import java.util.List;
@@ -49,10 +52,28 @@ public class TaskController {
 
 
 
+
     @ResponseBody
     @GetMapping("/getTask2")
     public List<Task> getTask2(@RequestParam("id") int id){
         List<Task> result2 = taskService.getTask2(id);
+        System.out.println(result2);
+        result2.sort(new Comparator<Task>() {
+            @Override
+            public int compare(Task u1, Task u2) {
+                System.out.println(u1.getTitle().compareTo(u2.getTitle()));
+                return u1.getTitle().compareTo(u2.getTitle());
+//                if(u1.getTitle().compareTo(u2.getTitle())) {
+//                    //return -1:即为正序排序
+//                    return -1;
+//                }else if (u1.getAge() == u2.getAge()) {
+//                    return 0;
+//                }else {
+//                    //return 1: 即为倒序排序
+//                    return 1;
+//                }
+            }
+        });
         return result2;
     }
 
@@ -60,6 +81,22 @@ public class TaskController {
     @GetMapping("/getTask")
     public List<Isend> getTask(@RequestParam("id") int id, String userid){
         List<Isend> result = taskService.getTask(id,userid);
+        System.out.println(result);
+        result.sort(new Comparator<Isend>() {
+            @Override
+            public int compare(Isend u1, Isend u2) {
+                System.out.println(u1.getTitle().compareTo(u2.getTitle()));
+                return u1.getTitle().compareTo(u2.getTitle());
+//                if(u1.getTitle().compareTo(u2.getTitle())) {
+//                    //return -1:即为正序排序
+//                    return -1;
+//                }else if (u1.getAge() == u2.getAge()) {
+//                    return 0;
+//                }else {
+//                    //return 1: 即为倒序排序
+//                    return 1;
+                }
+        });
         return result;
     }
 

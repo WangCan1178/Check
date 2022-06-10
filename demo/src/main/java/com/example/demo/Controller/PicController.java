@@ -94,7 +94,7 @@ public class PicController {
                 // 返回的resp是一个RecognizeTravelCardOCRResponse的实例，与请求对象对应
                 RecognizeTravelCardOCRResponse resp = client.RecognizeTravelCardOCR(req);
                 // 输出json格式的字符串回包
-                if (resp.getRiskArea().length == 0) {
+                if (resp.getRiskArea().length == 0 && resp.getReachedCity().length!=0) {
                     return "1";
                 }
 //                System.out.println(RecognizeTravelCardOCRResponse.toJsonString(resp));
@@ -134,7 +134,7 @@ public class PicController {
         // 3获取后缀
         String suffixName = fileName.substring(fileName.lastIndexOf("."));
         // 4路径
-        String filePath = "./src/main/resources/static/pics/";
+        String filePath = "src/main/resources/static/pics/";
         File dest = new File(filePath + fileName);
         // 5判断目录是否存在
         if (!dest.getParentFile().exists()) {
@@ -196,6 +196,13 @@ public class PicController {
         }catch (Exception e) {
             System.out.println(e.toString());
         }
+        return result;
+    }
+
+    @ResponseBody
+    @GetMapping("/getPicDD")
+    public Pic getPicDD(@RequestParam("id") int id) {
+        Pic result = picService.getPicDetail(id);
         return result;
     }
 

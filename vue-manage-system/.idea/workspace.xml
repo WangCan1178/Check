@@ -2,16 +2,81 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad705274-f5a1-4b9c-8732-5966b95b7ad0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/AGroup.a56a0430.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/AGroup.b9bca01b.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/AGroup.df9031a2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/AGroup.ee125dd3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Dashboard.8f1665ec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Dashboard.9170e290.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Forget.37f88d61.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Forget.9648fd80.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Login.6d589bd4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Login.9532d90e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/MGroup.777428b1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/MGroup.77bad3e5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Next.5cbeb1d1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Next.c1088f0f.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Register.04742661.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Register.83e8ba1c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Register.f6fa36be.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Task.53401315.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Task.72c7e6a6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/Task.b27580f3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/User.a1b4ac35.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/User.e26db0aa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/addGroup.6eb0aaf5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/addGroup.d0f7af07.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/addGroup.de82309e.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/forgetnext.8d15c505.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/forgetnext.c1814034.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/index.4bdb872e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/assets/index.d15afe68.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/pics/Screenshot_20220610_145459_com.eg.android.AlipayGphone.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/AGroup.a56a0430.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/AGroup.b9bca01b.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Dashboard.9170e290.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Forget.9648fd80.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Login.9532d90e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/MGroup.777428b1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/MGroup.77bad3e5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Next.5cbeb1d1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Register.83e8ba1c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Register.f6fa36be.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Task.72c7e6a6.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/Task.b27580f3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/User.a1b4ac35.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/addGroup.d0f7af07.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/addGroup.de82309e.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/forgetnext.c1814034.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/assets/index.d15afe68.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/GroupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/ManGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/ManGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/PicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Dao/GroupDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Dao/GroupDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Entity/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/Entity/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/resources/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/html2canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/html2canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.vite/html2canvas.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.vite/html2canvas.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/AGroup.343a064e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/AGroup.5b4689cc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/Dashboard.e51df225.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/Forget.f326f467.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/Login.9e8dfd08.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/MGroup.019bb5ac.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/MGroup.34de5843.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/Next.d0fdbde4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/Register.bffe174f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/Register.fc638e15.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/Task.dd6cbc1e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/Task.e2bcae1a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/User.d421793c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/addGroup.8f35fac6.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/addGroup.aa8aed91.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/forgetnext.f8605f9f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index.1b80984c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/AGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/AGroup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/MGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MGroup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/addGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/addGroup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Task.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Task.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +185,8 @@
       <workItem from="1654737498871" duration="455000" />
       <workItem from="1654741105392" duration="1585000" />
       <workItem from="1654765833330" duration="2153000" />
+      <workItem from="1654825802576" duration="2841000" />
+      <workItem from="1654842845635" duration="1714000" />
     </task>
     <servers />
   </component>
@@ -158,10 +225,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1654567566817" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1654765837760">
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1654825804664">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1654765837760" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1654825804664" />
     <state x="307" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1654677416015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -170,9 +237,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="15" y="222" width="909" height="575" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1654742105012" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1654675853113">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1654830488049">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1654675853113" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1654830488049" />
   </component>
 </project>

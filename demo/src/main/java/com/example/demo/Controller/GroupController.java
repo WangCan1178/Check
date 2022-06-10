@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Controller
@@ -76,6 +77,21 @@ public class GroupController {
     @GetMapping("/getTask")
     public List<Isend> getTask(@RequestParam("id") int id, @RequestParam("userid") String userid){
         List<Isend> result =  taskService.getTask(id,userid);
+        result.sort(new Comparator<Isend>() {
+            @Override
+            public int compare(Isend u1, Isend u2) {
+                System.out.println(u1.getTitle().compareTo(u2.getTitle()));
+                return u1.getTitle().compareTo(u2.getTitle()) * -1;
+//                if(u1.getTitle().compareTo(u2.getTitle())) {
+//                    //return -1:即为正序排序
+//                    return -1;
+//                }else if (u1.getAge() == u2.getAge()) {
+//                    return 0;
+//                }else {
+//                    //return 1: 即为倒序排序
+//                    return 1;
+            }
+        });
         return result;
     }
 

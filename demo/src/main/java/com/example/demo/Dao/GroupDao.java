@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 @Repository
 public interface GroupDao {
-    @Select("select `group`.groupid,`group`.`name` from `group`,member where member.userid=#{id} and member.groupid = `group`.groupid and role=1")
+    @Select("select `group`.groupid,`group`.`name`,`group`.describe from `group`,member where member.userid=#{id} and member.groupid = `group`.groupid and role=1")
     public List<Group> getAddGroup(String id);
 
     @Delete("delete from member where userid=#{userid} and groupid=#{groupid}")
@@ -23,7 +23,7 @@ public interface GroupDao {
     @Select("call userinsert(#{groupid}, #{userid})")
     public void userinsert(int groupid, String userid);
 
-    @Select("select `group`.groupid,`group`.`name` from `group`,member where member.userid=#{id} and member.groupid = `group`.groupid and role=0")
+    @Select("select `group`.groupid,`group`.`name`,`group`.describe from `group`,member where member.userid=#{id} and member.groupid = `group`.groupid and role=0")
     public List<Group> getManGroup(String id);
 
     @Insert("insert into `group`(name) values (#{name}) ")
